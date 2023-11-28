@@ -1,0 +1,230 @@
+body{
+    font-family: monospace;
+    background-color: rgb(2, 10, 31);
+    color: white;
+}
+#root{
+    display: grid;
+    grid-template-areas: 
+    'nav nav nav nav nav nav'
+    'sec sec sec sec sec sec'
+    'sec sec sec sec sec sec'
+    'na2 na2 na2 na2 na2 na2'
+    'ren ren ren ren ren ren';
+    width: 100%;
+}
+.active{
+    color:  rgb(93, 0, 180);
+    border-top: 3px solid orangered;
+    
+}
+/* Global */
+a{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+a:link{
+    padding: 1vw;
+    text-decoration: none;
+    border-radius: .5em;
+}
+/* Navbar */
+nav{
+    grid-area: nav;
+    display: flex;
+    width: 98vw;
+    flex-direction: column;
+    align-items: end;
+    height: 4.5vh;
+    border-bottom: 1px solid  rgb(93, 0, 180);
+}
+nav .navBar{
+    display: flex;
+    width: 100%;
+    height: 4.5vh;
+    padding-left: 2vw;
+}
+.navBar .ulViewXL{
+    visibility: hidden;
+}
+.navBar h5{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    cursor: pointer;
+    gap: 1vw;
+}
+.navBar .sun{
+    color: rgb(255, 255, 255);
+}
+.navBar .sun:hover{
+    color:  rgb(93, 0, 180) !important;
+}
+.navBar h5:hover{
+    color:  rgb(93, 0, 180);
+}
+nav .btn{
+    display: flex;
+    position: absolute;
+    right: 0vw;
+    align-items: center;
+    justify-content: end;
+    background-color: rgb(2, 10, 31);
+    border: 0;
+    padding: 1.2vw;
+    width: 38px;
+    height: 4.4vh;
+}
+nav .btn .icon{
+    font-size: 5rem;
+}
+nav .btn:hover{
+    border: 0;
+    background-color: rgb(93, 0, 180);
+}
+.navBar .moon{
+    color: rgb(2, 10, 31);
+}
+.navBar .moon:hover{
+    color:  rgb(93, 0, 180) !important;
+}
+nav ul{
+    position: absolute;
+    right: 1vw;
+    top: 5vh;
+    background-color: rgba(187, 187, 187, 0.745);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    padding: 1vw;
+    text-align: end;
+    border-radius: .5em;
+}
+nav ul li a:hover{
+    background-color: rgba(236, 236, 236, 0.632);
+    color:  rgb(93, 0, 180) !important;
+}
+nav .collapse{
+    transition: all 1s ease;
+    display: block;
+    width: auto;
+    position: absolute;
+    right: 0vw;
+}
+/* SectionPrime */
+.sectionPrime{
+    grid-area: sec;
+    display: flex;
+    width: 100vw;
+    height: 100%;
+    gap: 2vw;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    justify-content: center;
+    align-items: center;
+    border-bottom: rgb(93, 0, 180);
+    /* border-bottom: 1px solid rgb(2, 10, 31); */
+}
+.sectionPrime .imgMe{
+    border-radius: 50%;
+    cursor: pointer;
+}
+.sectionPrime .liked-img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw;
+}
+.likeds{
+    display: flex;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 1vw;
+    border-radius: .5em;
+    gap: 1vw;
+}
+.sectionPrime .heart{
+    color: red;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.likeds:hover{
+    /* background-color: rgba(204, 203, 203, 0.745); */
+    color: rgb(93, 0, 180);
+}
+.sectionPrime h2:hover{
+    color: red;
+
+}
+/* Barra navegaciòn 2 */
+.navegationTwo{
+    grid-area: na2;
+    display: flex;
+    height: 5vh;
+    border-bottom: 1px solid rgb(93, 0, 180);
+    border-top: 1px solid rgb(93, 0, 180);
+    /* border-bottom: 1px solid rgb(2, 10, 31); */
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.navegationTwo ul{
+    display: flex;
+    justify-content: space-between;
+    gap: 3vh;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+.navegationTwo ul li{
+    text-align: center;
+    text-wrap: nowrap;
+    border-radius: .5em;
+    list-style: none;
+    white-space: nowrap;
+}
+.navegationTwo li a:hover{
+    background-color: rgba(204, 204, 204, 0.632);
+    color: rgb(93, 0, 180) !important;
+}
+@media (min-width: 767px) {
+    #root{
+        grid-template-areas: 
+        'nav nav nav nav nav nav'
+        'sec sec ren ren ren ren'
+        'sec sec ren ren ren ren'
+        'sec sec ren ren ren ren'
+        'sec sec ren ren ren ren';
+    }
+    nav{
+        height: 6vh;
+    }
+    nav .navBar{
+        height: 6vh;
+        padding: 1vw;
+    }
+    .navBar .btn{
+        visibility: hidden;
+    }
+    .navegationTwo{
+        visibility: hidden;
+    }
+    .sectionPrime{
+        flex-direction: column;
+        justify-content: start;
+        width: 35vw;
+        border: 0;
+        padding: 1.5vw;
+        border-right: 1px solid rgb(93, 0, 180);
+        /* border-right: 1px solid rgb(2, 10, 31); */
+    }
+    .sectionPrime .imgMe{
+        width: 280px;
+        height: 300px;
+    }
+}

@@ -1,0 +1,38 @@
+.student{
+    grid-area: ren;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2vh;
+    padding: 5vh;
+}
+.student h3{
+    margin: 0;
+    padding: 0;
+}
+.student .iBtn{
+    font-size: 1.3em;
+}
+.student .collapse .section-info{
+    margin-bottom: 2vw;
+}
+.student .collapse a{
+    padding: 0;
+}
+.student .collapse a:hover{
+    text-decoration: underline;
+}
+.student .btn{
+    border: 0;
+    background-color: rgb(2, 10, 31);
+}
+.student .btn:hover{
+    color: rgb(93, 0, 180);
+    background-color: rgba(187, 187, 187, 0.745);
+}
+@media (min-width: 767px){
+    .student{
+        width: 65vw;
+        height: 95vh;
+        padding: 8vh;
+    }
+}

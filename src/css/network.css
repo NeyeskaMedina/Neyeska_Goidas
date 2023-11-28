@@ -1,0 +1,32 @@
+.networks{
+    grid-area: ren;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    row-gap: 3vh;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+.networks a{
+    display: flex;
+    column-gap: 1vw;
+    align-items: center;
+    padding: 2vw;
+    border-radius: .5em;
+    color: white;
+}
+.networks a:hover{
+    color: white;
+    transition: 1s all ease-in-out;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+@media (min-width: 767px){
+    .networks{
+        padding: 5vw;
+        width: 65vw;
+        height: 94vh;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,58 @@
+a:hover{
+    text-decoration: underline;
+    color: rgb(93, 0, 180);
+}
+.knowledges{
+    grid-area: ren;
+    padding-left: 5vw;
+    padding-right: 2vw;
+    padding-bottom: 2vh;
+}
+.knowledges h3{
+    width: 40%;
+    padding-left: 1vw;
+    margin-top: 2vh;
+    padding-bottom: 0.5vw;
+    text-align: start;
+    border-bottom: 2px rgb(93, 0, 180) solid;
+}
+.frames{
+    padding-top: 1vh;
+}
+.knowledges div{
+    margin-top: 4vh;
+    /* margin-left: 6vw; */
+    align-items: center;
+    color: rgb(57, 57, 57);
+}
+.languages{
+    display: flex;
+    column-gap: 1vh;
+}
+.languages h5{
+    display: flex;
+    align-items: center;
+    column-gap: 1vw;
+    height: 5vh;
+    margin: 0;
+    padding: 1.5vw;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+.knowledges p{
+    font-size: 14px;
+    font-weight: lighter;
+}
+.knowledges a:hover{
+    text-decoration: underline;
+}
+.knowledges h5{
+    cursor: pointer;
+}
+@media (min-width: 767px) {
+    .knowledges{
+        width: 60vw;
+    }
+
+}
