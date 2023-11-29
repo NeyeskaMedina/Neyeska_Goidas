@@ -146,14 +146,14 @@ nav .collapse{
     border-radius: .5em;
     gap: 1vw;
 }
-.sectionPrime .heart{
-    color: red;
-    font-size: 1.5em;
-    cursor: pointer;
+.likeds svg:hover{
+    /* background-color: rgba(204, 203, 203, 0.745); */
+    fill: rgb(93, 0, 180);
 }
-.likeds:hover{
+.likeds svg:hover + p{
     /* background-color: rgba(204, 203, 203, 0.745); */
     color: rgb(93, 0, 180);
+    text-decoration: underline;
 }
 .sectionPrime h2:hover{
     color: red;
