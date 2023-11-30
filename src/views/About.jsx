@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import '../css/about.css'
 
 export const About = () => {
+
   return (
     <>
     <section id="aboutme" className="aboutme" style={{gridArea: "ren"}}>

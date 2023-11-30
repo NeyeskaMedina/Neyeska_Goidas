@@ -1,4 +1,8 @@
+import useNavegate from 'react-router-dom'
+import { getPath } from "../helper/getPath";
 
+export const scripts = () => {
+    const navegate = useNavegate()
 let startX = 0;
 let startY = 0;
 let deltaX;
@@ -10,22 +14,32 @@ body.addEventListener('touchstart', (event)=>{
     startY = event.touches[0].clientY;
 });
 body.addEventListener('touchend',  (event) =>{
-    // let sectionPage = document.querySelector('main');
     // Calcula la distancia horizontal y vertical del movimiento.
+    // const path = getPath()
     deltaX = event.changedTouches[0].clientX - startX;
     deltaY = event.changedTouches[0].clientY - startY;
     // Compara las distancias para determinar la dirección.
     // Compara las distancias para determinar la dirección.
     if (Math.abs(deltaX) > Math.abs(deltaY)) {
         if (deltaX > 0) {
+
             //desplazo hacia la derecha
-            console.log('Hacia la derecha >>>');
+            const path = getPath
+            console.log(path);
+           
         } else {
             //desplazo hacia la izquierda
-            console.log('Hacia la izquierda <<<');
+           
         }
     }
      // Actualiza las coordenadas de inicio para el siguiente movimiento.
     startX = event.changedTouches[0].clientX;
     startY = event.changedTouches[0].clientY;
 });
+
+
+  return (
+    <div>scripts</div>
+  )
+}
+

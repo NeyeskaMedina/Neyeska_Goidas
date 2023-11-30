@@ -24,11 +24,11 @@ export const Knowledge = () => {
             </div>
             <div className="languages">
                 <h5 style={{backgroundColor: "#aa0000"}}> Java</h5>
-                <a href=""> <p>Autodidact</p></a>
+                <p>Autodidact</p>
             </div>
             <div className="languages">
                 <h5 style={{backgroundColor: "#00a2a5"}}> Visual Basic</h5>
-                <a href=""> <p>Autodidact</p></a>
+                <p>Autodidact</p>
             </div>
             <h3 className="frames">FrameWorks and libraries</h3>
             <div className="languages">
@@ -37,29 +37,34 @@ export const Knowledge = () => {
                 <a href="https://desafiosdev.s3.amazonaws.com/uploads/certification/image/26526/aprobacion-modulos-cursos-b-learning-react-i-g43-14335.png"> <p>Certificate</p></a>
             </div>
             <div className="languages">
+                <h5 style={{backgroundColor: "#005aff"}}>React II</h5>
+                <p>Desafio Latam /</p>
+                <a href="https://desafiosdev.s3.amazonaws.com/uploads/certification/image/27298/aprobacion-modulos-cursos-b-learning-react-ii-g43-14335.png"> <p>Certificate</p></a>
+            </div>
+            <div className="languages">
                 <h5 style={{backgroundColor: "#68237b"}}> Bootstrap</h5>
-                <a href=""> <p>Css / Version 5.3</p></a>
+                <p>Desafio Latam /</p><p>Css / Version 5.3</p>
             </div>
             <div className="languages">
                 <h5 style={{backgroundColor: "#150aaf"}}> Axios</h5>
-                <a href=""> <p>Apis Library</p></a>
+                <p>Apis Library</p>
             </div>
             <div className="languages">
                 <h5 style={{backgroundColor: "#ff0090"}}> Chart js</h5>
-                <a href=""> <p>graphics Library</p></a>
+                <p>graphics Library</p>
             </div>
             <div className="languages">
                 <h5 style={{backgroundColor: "#f9bd31"}}> Postman</h5>
-                <a href=""> <p>Api Tool</p></a>
+                <p>Api Tool</p>
             </div>
             <h3>Terminal</h3>
             <div className="languages">
                 <h5 style={{backgroundColor: "#0dd84d"}}> Git</h5>
-                <a href=""> <p>Terminal</p></a>
+                <p>Terminal</p>
             </div>
             <div className="languages">
                 <h5 style={{backgroundColor: "#000000"}}> GitHub</h5>
-                <a href=""> <p>Version Control</p></a>
+                <p>Version Control</p>
             </div>
     </section>
     </>

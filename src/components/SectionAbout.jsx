@@ -7,11 +7,11 @@ export const SectionAbout = () => {
             <div className="liked-img">
                 <img className='imgMe' 
                     src="../public/img/i.jpg" 
-                    alt="Photo short de Neyeska Medina" 
+                    alt="" 
                     width='190px' 
                     height='210px' 
                     title='Neyeska Goidas' 
-                    style={{border: "1px solid rgb(2, 10, 31)"}}
+                    style={{border: "1px solid rgb(93, 0, 180)"}}
                 />
                 <div className="likeds">
                     <svg onClick={(() =>{setCount(count + 1)})} fill="#ffffff" stroke="none" version="1.0" xmlns="http://www.w3.org/2000/svg"
