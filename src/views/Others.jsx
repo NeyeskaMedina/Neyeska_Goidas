@@ -19,14 +19,14 @@ export const Others = () => {
                 <h3>Studies</h3>
             </button>
             <img className="ice"
-                    src="./src/assets/img/ice.png" 
+                    src="/img/ice.png" 
                     alt=""
                     width="40px"
                     height="40px"
                     title="Instituto de Capacitacion Empresarial ICE"
             />
             <img className="simonBolivar"
-                src="./src/assets/img/liceoSimonBolivar.jpg" 
+                src="/img/liceoSimonBolivar.jpg" 
                 alt=""
                 width="40px"
                 height="40px"
@@ -60,21 +60,21 @@ export const Others = () => {
                 <h3>Jobs</h3>
             </button>
             <img className="america"
-                    src="./src/assets/img/america.png"
+                    src="/img/america.png"
                     alt=""
                     width="40px"
                     height="40px"
                     title="Sociedad America Limitada"
             />
             <img className="avessoc"
-                    src="./src/assets/img/avessoc.png" 
+                    src="/img/avessoc.png" 
                     alt=""
                     width="40px"
                     height="40px"
                     title="AVESSOC"
             />
             <img className="hss"
-                    src="./src/assets/img/hss.png" 
+                    src="/img/hss.png" 
                     alt=""
                     width="40px"
                     height="40px"
@@ -113,21 +113,21 @@ export const Others = () => {
                 <h3>Courses</h3>
             </button>
             <img className="desafioLatam"
-                        src="./src/assets/img/desafioLatam.png" 
+                        src="/img/desafioLatam.png" 
                         alt=""
                         width="50px"
                         height="40px"
                         title="Desafio Latam"
             />
             <img className="damercap"
-                        src="./src/assets/img/damercap.jpg" 
+                        src="/img/damercap.jpg" 
                         alt=""
                         width="40px"
                         height="40px"
                         title="DAMERCAP"
             />
             <img className="feyAlegria"
-                        src="./src/assets/img/feyAlegria.png" 
+                        src="/img/feyAlegria.png" 
                         alt=""
                         width="40px"
                         height="40px"

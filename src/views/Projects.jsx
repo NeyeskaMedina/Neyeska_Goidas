@@ -10,7 +10,7 @@ export const Projects = () => {
                     <FaExternalLinkAlt />
                 </a>
                 <img 
-                    src="./src/assets/img/mamma-mia.png" 
+                    src="/img/mamma-mia.png" 
                     alt=""
                     width="96%"
                     height="75%"
@@ -25,7 +25,7 @@ export const Projects = () => {
                     <FaExternalLinkAlt />
                 </a>
                 <img 
-                    src="./src/assets/img/farmaciaDeTurno.png" 
+                    src="/img/farmaciaDeTurno.png" 
                     alt=""
                     width="96%"
                     height="75%"
@@ -40,7 +40,7 @@ export const Projects = () => {
                     <FaExternalLinkAlt />
                 </a>
                 <img 
-                    src="./src/assets/img/currencyConvert.png" 
+                    src="/img/currencyConvert.png" 
                     alt=""
                     width="96%"
                     height="75%"
@@ -55,7 +55,7 @@ export const Projects = () => {
                     <FaExternalLinkAlt />
                 </a>
                 <img 
-                    src="./src/assets/img/toDoList.png" 
+                    src="/img/toDoList.png" 
                     alt=""
                     width="96%"
                     height="75%"
@@ -70,7 +70,7 @@ export const Projects = () => {
                 <FaExternalLinkAlt />
                 </a>
                 <img 
-                    src="./src/assets/img/messagingPage.png" 
+                    src="/img/messagingPage.png" 
                     alt=""
                     width="96%"
                     height="80%"
@@ -85,7 +85,7 @@ export const Projects = () => {
                 <FaExternalLinkAlt />
                 </a>
                 <img 
-                    src="./src/assets/img/realState.png" 
+                    src="/img/realState.png" 
                     alt=""
                     width="96%"
                     height="80%"

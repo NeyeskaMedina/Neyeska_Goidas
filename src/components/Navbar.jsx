@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Collapse from 'react-bootstrap/Collapse';
 import { IoMenuSharp } from "react-icons/io5"
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { FaUser, FaProjectDiagram } from "react-icons/fa";
 import { IoLibrary } from "react-icons/io5";
 import { BiWorld } from "react-icons/bi";
@@ -11,7 +11,6 @@ import { ImPushpin } from "react-icons/im";
 import { modeLigth, modeDark } from "../helper/mode";
 import { FaMoon } from "react-icons/fa";
 import { FaSun } from "react-icons/fa";
-import "../css/viewXL.css"
 
 export const Navbar = () => {
 const { ligthMode, setLigthMode } = useContext(UserContext);

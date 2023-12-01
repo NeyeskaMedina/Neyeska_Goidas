@@ -1,12 +1,18 @@
 import { useState } from "react";
+import { AiFillEnvironment } from "react-icons/ai";
 
 export const SectionAbout = () => {
     const [ count, setCount ] = useState(100);
+    const [ heart, setHeart ] = useState(true);
+    const handleLike = () => {
+        heart ? setCount(count + 1) : setCount(count - 1);
+        setHeart(false)
+    }
     return (
         <section className="sectionPrime">
             <div className="liked-img">
                 <img className='imgMe' 
-                    src="../public/img/i.jpg" 
+                    src='/img/i.jpg'
                     alt="" 
                     width='190px' 
                     height='210px' 
@@ -14,7 +20,7 @@ export const SectionAbout = () => {
                     style={{border: "1px solid rgb(93, 0, 180)"}}
                 />
                 <div className="likeds">
-                    <svg onClick={(() =>{setCount(count + 1)})} fill="#ffffff" stroke="none" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                    <svg className="svgHeart" onClick={handleLike} fill="#ffffff" stroke="none" version="1.0" xmlns="http://www.w3.org/2000/svg"
                         width="25px" height="25px" viewBox="0 0 1280.000000 1189.000000"
                         preserveAspectRatio="xMidYMid meet">
                     <g transform="translate(0.000000,1189.000000) scale(0.100000,-0.100000)"
@@ -29,12 +35,13 @@ export const SectionAbout = () => {
                     -375 32 -504 28z"/>
                     </g>
                     </svg>
-                    <p>{count}</p>
+                    <p>{count} Like</p>
                 </div>
             </div>
             <main className='descriptionPrime'>
-                <h4>Hi, tell me Neye </h4>
-                <p>I'm Develop Web Fullstack 🥇🚀</p>
+                <h4>Hi, tell me Neye 🚀</h4>
+                <p>🥇I'm Develop Web Fullstack</p>
+                <p className="pUbi"><AiFillEnvironment className="iconUbi"/> Chile</p>
             </main>        
         </section>
     )

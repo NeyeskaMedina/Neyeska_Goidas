@@ -146,18 +146,29 @@ nav .collapse{
     border-radius: .5em;
     gap: 1vw;
 }
-.likeds svg:hover{
-    /* background-color: rgba(204, 203, 203, 0.745); */
-    fill: rgb(93, 0, 180);
-}
-.likeds svg:hover + p{
+.likeds .svgHeart:hover + p{
     /* background-color: rgba(204, 203, 203, 0.745); */
     color: rgb(93, 0, 180);
     text-decoration: underline;
 }
+.likeds .svgHeart:hover{
+    /* background-color: rgba(204, 203, 203, 0.745); */
+    fill: rgb(93, 0, 180) !important;
+}
 .sectionPrime h2:hover{
     color: red;
 
+}
+.pUbi{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 2vw;
+    margin-top: 2vh;
+}
+.iconUbi{
+    font-size: 1.4em;
+    color: rgb(0, 123, 255);
 }
 /* Barra navegaciòn 2 */
 .navegationTwo{
@@ -207,6 +218,26 @@ nav .collapse{
     nav .navBar{
         height: 6vh;
         padding: 1vw;
+    }
+    .navBar{
+        justify-content: space-between;
+    }
+    .ulViewXL{
+        visibility: visible !important;
+        display: flex;
+        flex-direction: row;
+        position: sticky;
+        padding: 0;
+        align-items: center;
+        row-gap: 1vw;
+        margin: 0;
+        background-color:rgba(240, 255, 255, 0);
+    }
+    .ulViewXL li a{
+        padding: 0.3vw;
+        display: flex;
+        align-items: center;
+        gap: 0.3vw;
     }
     .navBar .btn{
         visibility: hidden;
