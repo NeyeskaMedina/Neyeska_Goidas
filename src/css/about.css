@@ -17,7 +17,9 @@
 }
 @media (min-width: 767px) {
     .aboutme{
-        padding: 8vw;
+        padding-left: 8vw;
+        padding-right: 8vw;
+        padding-top: 4vw;
         height: 95vh;
     }
     .aboutme .p1, .p2{
