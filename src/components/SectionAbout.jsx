@@ -1,12 +1,23 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AiFillEnvironment } from "react-icons/ai";
+import { UserContext } from "../context/UserContext";
 
 export const SectionAbout = () => {
+    const { ligthMode } = useContext(UserContext);
     const [ count, setCount ] = useState(100);
-    const [ heart, setHeart ] = useState(true);
+    const [ heart, setHeart ] = useState(false);
     const handleLike = () => {
-        heart ? setCount(count + 1) : setCount(count - 1);
-        setHeart(false)
+        if(heart !== true){
+            setCount(count + 1)
+            const like = document.querySelector('.likeds .svgHeart');
+            like.style.fill = "rgb(93, 0, 180)";
+            setHeart(true)
+        } else {
+            setHeart(false);
+            const like = document.querySelector('.likeds .svgHeart');
+            ligthMode ? like.style.fill = "rgb(2, 10, 31)" : like.style.fill = "white";
+            setCount(count - 1)
+        };
     }
     return (
         <section className="sectionPrime">

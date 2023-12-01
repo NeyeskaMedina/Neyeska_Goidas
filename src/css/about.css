@@ -6,6 +6,9 @@
 .aboutme h6{
     text-align: end;
 }
+.aboutme .p2{
+    margin-top: 2vh;
+}
 .aboutme a:hover{
     text-decoration: underline;
     color: rgb(93, 0, 180);

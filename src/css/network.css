@@ -14,7 +14,7 @@
     align-items: center;
     padding: 2vw;
     border-radius: .5em;
-    color: white;
+    color: white !important;
 }
 .networks a:hover{
     color: white;

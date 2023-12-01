@@ -24,9 +24,14 @@
 .student .btn{
     border: 0;
     background-color: rgb(2, 10, 31);
+    border: 1px solid rgb(93, 0, 180);
+}
+#others a:hover{
+    color: rgb(93, 0, 180) !important;
 }
 .student .btn:hover{
     color: rgb(93, 0, 180);
+    border: 0;
     background-color: rgba(187, 187, 187, 0.745);
 }
 @media (min-width: 767px){

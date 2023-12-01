@@ -68,3 +68,8 @@
         transition: all 1s;
     }
 }
+@media (min-width: 1000px){
+    .card-projects{
+        height: 80vh;
+    }
+}
