@@ -32,6 +32,11 @@ export const Knowledge = () => {
             </div>
             <h3 className="frames">FrameWorks and libraries</h3>
             <div className="languages">
+                <h5 style={{backgroundColor: "#3c873a"}}>Nodejs</h5>
+                <p>Desafio Latam /</p>
+                <a href="https://desafiosdev.s3.amazonaws.com/uploads/certification/image/31376/aprobacion-modulos-cursos-b-learning-backend-con-node-y-express-g43-14335(3).png"> <p>Certificate</p></a>
+            </div>
+            <div className="languages">
                 <h5 style={{backgroundColor: "#005aff"}}>React</h5>
                 <p>Desafio Latam /</p>
                 <a href="https://desafiosdev.s3.amazonaws.com/uploads/certification/image/26526/aprobacion-modulos-cursos-b-learning-react-i-g43-14335.png"> <p>Certificate</p></a>

@@ -9,7 +9,7 @@ export const Network = () => {
             <FaInstagram style={{color:"white", fontSize: "2em"}}/>
             Instagram
         </a>
-        <a href="https://wa.me/56944097355" style={{backgroundColor: "#25D366"}}>
+        <a href="https://wa.me/56962066078" style={{backgroundColor: "#25D366"}}>
             <FaWhatsapp style={{color:"white", fontSize: "2em"}}/>
             {/* <i class="fa-brands fa-whatsapp fa-xl"></i> */}
             Whatsapp

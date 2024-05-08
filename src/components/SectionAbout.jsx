@@ -52,6 +52,7 @@ export const SectionAbout = () => {
             <main className='descriptionPrime'>
                 <h4>Hi, tell me Neye 🚀</h4>
                 <p>🥇I'm Develop Web Fullstack</p>
+                <a href="https://desafiosdev.s3.amazonaws.com/uploads/certification/image/31361/certificacion-aprobacion-de-carrera-nuevo-proyecto-final-g43-14335(3).png" style={{textAlign: "center"}}>📌Title</a>
                 <p className="pUbi"><AiFillEnvironment className="iconUbi"/> Chile</p>
             </main>        
         </section>
