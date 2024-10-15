@@ -1,6 +1,9 @@
 /* Section Aboutme */
 .aboutme{
     grid-area: ren;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 2vw;
 }
 .aboutme h6{
@@ -15,8 +18,12 @@
 }
 .containerAbout{
     padding: 2vw;
-    border: 1px solid rgb(93, 0, 180);
     box-shadow: 10px 10px 10px rgb(2, 10, 31);
+    font-size: 20px;
+    text-align: center;
+}
+.sectionPrime{
+    background-color: #9DACB5;
 }
 @media (min-width: 767px) {
     .aboutme{

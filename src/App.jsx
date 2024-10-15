@@ -4,7 +4,7 @@ import SectionAbout from "./components/SectionAbout";
 import { NavegationTwo } from "./components/NavegationTwo";
 import { About } from "./views/About";
 import { Knowledge } from "./views/Knowledge";
-import { Network } from "./views/Network";
+// import { Network } from "./views/Network";
 import { Projects } from "./views/Projects";
 import { Others } from "./views/Others";
 import { Routes, Route } from "react-router-dom";
@@ -15,8 +15,6 @@ function App() {
         <ContextProvider>
             <Navbar />
             <SectionAbout/>
-            <NavegationTwo />
-
             <Routes>
                 <Route
                   path="/"
@@ -26,10 +24,10 @@ function App() {
                   path="/about"
                   element={<About/>}
                 />
-                <Route
+                {/* <Route
                   path="/network"
                   element={<Network/>}
-                />
+                /> */}
                 <Route
                   path="/knowledge"
                   element={<Knowledge/>}
@@ -39,6 +37,7 @@ function App() {
                   element={<Others/>}
                 />
             </Routes>
+            <NavegationTwo />
         </ContextProvider>
     </>
   )

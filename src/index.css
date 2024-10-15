@@ -1,22 +1,26 @@
-body{
-    font-family: monospace;
-    background-color: rgb(2, 10, 31);
-    color: white;
-}
 #root{
     display: grid;
     grid-template-areas: 
     'nav nav nav nav nav nav'
     'sec sec sec sec sec sec'
     'sec sec sec sec sec sec'
-    'na2 na2 na2 na2 na2 na2'
-    'ren ren ren ren ren ren';
+    'ren ren ren ren ren ren'
+    'na2 na2 na2 na2 na2 na2';
     width: 100%;
 }
+.ovo-regular {
+    font-family: "Ovo", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+body{
+    font-family: monospace;
+    background-color: rgb(2, 10, 31);
+    color: white;
+}
 .active{
-    color:  rgb(93, 0, 180);
-    border-top: 3px solid orangered;
-    
+    border-top: 3px solid orangered;  
 }
 /* Global */
 a{
@@ -33,13 +37,18 @@ nav{
     grid-area: nav;
     display: flex;
     width: 100vw;
+    padding-left: 10px;
     flex-direction: column;
-    align-items: end;
-    height: 4.5vh;
-    border-bottom: 1px solid  rgb(93, 0, 180);
+    justify-content: center;
+    align-items: start;
+    height: 8vh;
+    font-size: 22px;
+    background-color: #020A1F;
 }
 nav .navBar{
     display: flex;
+    justify-content: start;
+    align-items: center;
     width: 100%;
     height: 4.5vh;
     padding-left: 2vw;
@@ -47,47 +56,7 @@ nav .navBar{
 .navBar .ulViewXL{
     visibility: hidden;
 }
-.navBar h5{
-    display: flex;
-    align-items: center;
-    margin: 0;
-    cursor: pointer;
-    gap: 1vw;
-}
-.navBar .sun{
-    color: rgb(255, 255, 255);
-}
-.navBar .sun:hover{
-    color:  rgb(93, 0, 180) !important;
-}
-.navBar h5:hover{
-    color:  rgb(93, 0, 180);
-}
-nav .btn{
-    display: flex;
-    position: absolute;
-    right: 0vw;
-    align-items: center;
-    justify-content: end;
-    background-color: rgb(2, 10, 31);
-    border: 0;
-    padding: 1.2vw;
-    width: 38px;
-    height: 4.3vh;
-}
-nav .btn .icon{
-    font-size: 5rem;
-}
-nav .btn:hover{
-    border: 0;
-    background-color: rgb(93, 0, 180);
-}
-.navBar .moon{
-    color: rgb(2, 10, 31);
-}
-.navBar .moon:hover{
-    color:  rgb(93, 0, 180) !important;
-}
+
 nav ul{
     position: absolute;
     right: 1vw;
@@ -101,10 +70,10 @@ nav ul{
     text-align: end;
     border-radius: .5em;
 }
-nav ul li a:hover{
+/* nav ul li a:hover{
     background-color: rgba(236, 236, 236, 0.632);
-    color:  rgb(93, 0, 180) !important;
-}
+    color:  rgb(93, 0, 180) !important; 
+} */
 nav .collapse{
     transition: all 1s ease;
     display: block;
@@ -114,18 +83,20 @@ nav .collapse{
 }
 /* SectionPrime */
 .sectionPrime{
+    position: absolute;
     grid-area: sec;
-    display: flex;
-    width: 100vw;
-    height: 100%;
+    display: none;
+    /* width: 100vw;
+    height: 25vw;
     gap: 2vw;
     padding-top: 3vh;
     padding-bottom: 3vh;
     padding-left: 2vw;
     padding-right: 2vw;
+    background-color: #1b2131;
     justify-content: center;
     align-items: center;
-    border-bottom: rgb(93, 0, 180);
+    border-bottom: rgb(93, 0, 180); */
     /* border-bottom: 1px solid rgb(2, 10, 31); */
 }
 .sectionPrime .imgMe{
@@ -138,33 +109,51 @@ nav .collapse{
     align-items: center;
     gap: 1vw;
 }
+.sectionPrime h3{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    cursor: pointer;
+    gap: 1vw;
+    letter-spacing: 2px;
+}
+.sectionPrime .svgRocket{
+    font-size: 18px;
+}
+.sectionPrime.sun{
+    color: rgb(255, 255, 255);
+}
+/* .sectionPrime .sun:hover{
+    color:  rgb(93, 0, 180) !important;
+} */
+.sectionPrime .moon{
+    color: rgb(2, 10, 31);
+}
+/* .sectionPrime .moon:hover{
+    color:  rgb(93, 0, 180) !important;
+} */
+.aLinks:hover{
+    color: rgb(2, 10, 31);
+}
 .likeds{
     display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: 700;
     cursor: pointer;
-    padding: 1vw;
-    border-radius: .5em;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #020A1F;
     gap: 1vw;
 }
-.likeds .svgHeart:hover + p{
-    /* background-color: rgba(204, 203, 203, 0.745); */
-    color: rgb(93, 0, 180);
-    text-decoration: underline;
+
+.likeds:hover{
+    background-color: #020A1F;
 }
-.likeds .svgHeart:hover{
-    /* background-color: rgba(204, 203, 203, 0.745); */
-    fill: rgb(93, 0, 180) !important;
-}
+
 .sectionPrime h2:hover{
     color: red;
 
-}
-.pUbi{
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    gap: 2vw;
-    margin-top: 2vh;
 }
 .iconUbi{
     font-size: 1.4em;
@@ -174,9 +163,11 @@ nav .collapse{
 .navegationTwo{
     grid-area: na2;
     display: flex;
-    height: 5vh;
-    border-bottom: 1px solid rgb(93, 0, 180);
-    border-top: 1px solid rgb(93, 0, 180);
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: auto;
+    background-color: #131824;
     /* border-bottom: 1px solid rgb(2, 10, 31); */
     overflow-x: scroll;
     overflow-y: hidden;
@@ -201,12 +192,12 @@ nav .collapse{
 }
 .navegationTwo li a:hover{
     background-color: rgba(204, 204, 204, 0.632);
-    color: rgb(93, 0, 180) !important;
+    /* color: rgb(93, 0, 180) !important; */
 }
 @media (min-width: 767px) {
     #root{
         grid-template-areas: 
-        'nav nav nav nav nav nav'
+        'sec sec nav nav nav nav'
         'sec sec ren ren ren ren'
         'sec sec ren ren ren ren'
         'sec sec ren ren ren ren'
@@ -214,10 +205,12 @@ nav .collapse{
     }
     nav{
         height: 6vh;
+        margin-left: 350px;
     }
     nav .navBar{
         height: 6vh;
         padding: 1vw;
+        justify-content: end;
     }
     .navBar{
         justify-content: space-between;
@@ -239,23 +232,39 @@ nav .collapse{
         align-items: center;
         gap: 0.3vw;
     }
-    .navBar .btn{
+    .navBar .iconBurguer{
         visibility: hidden;
     }
     .navegationTwo{
         visibility: hidden;
     }
+    .navegationTwo li a:hover{
+        background-color: #020A1F;
+    }
     .sectionPrime{
+        position: fixed;
+        display: flex;
         flex-direction: column;
         justify-content: start;
-        width: 35vw;
+        width: 350px;
+        height: 100vh;
+        background-color: #9DACB5;
         border: 0;
         padding: 1.5vw;
         border-right: 1px solid rgb(93, 0, 180);
         /* border-right: 1px solid rgb(2, 10, 31); */
     }
     .sectionPrime .imgMe{
-        width: 280px;
-        height: 300px;
+        width: 225px;
+        height: 225px;
     }
 }
+@media (max-width: 767px){
+    .card_projects{
+        flex-direction: column;
+        flex-direction: column-reverse;
+    }
+    nav {
+        background-color: #131824;
+    }
+};

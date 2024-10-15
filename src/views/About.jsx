@@ -2,11 +2,22 @@ import { Link } from "react-router-dom";
 import '../css/about.css'
 
 export const About = () => {
+ 
 
   return (
     <>
-    <section id="aboutme" className="aboutme" style={{gridArea: "ren"}}>
-              <div className="containerAbout">
+    <section 
+      id="aboutme" className="aboutme" style={{ gridArea: "ren"}}>
+      
+        <h1 className='ovo-regular'
+            style={{
+                padding: "1vw",
+                width: "85%",
+                textAlign: "center"
+            }}
+        >About me
+        </h1>
+              <div className="containerAbout ovo-regular">
                 <p className="p1">I'm a Business Administration technician, but my true passion is programming since I was 17 years old. 
                     As a self-taught person, 
                     I have learned several programming languages carried out projects to improve my daily life. 

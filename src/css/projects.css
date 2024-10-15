@@ -4,72 +4,46 @@
     flex-direction: column;
     align-items: center;
     gap: 3vh;
-    margin-top: 3vh;
+    padding-top: 3vh;
+    margin-left: 25vw;
+    height: 100vh;
+    width: 75vw;
 }
-.card-projects{
+.card_projects{
     display: flex;
+    width: 80%;
+    padding: 3vw; 
+    gap: 25px;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    margin-bottom: 40px;
+    justify-content: space-between;
+}
+.box_projects{
+    display: flex;
+    width: 35%;
     flex-direction: column;
+    text-align: center;
     align-items: center;
     justify-content: space-between;
-    border-radius: .5em;
-    background-color: rgba(200, 199, 199, 0.857);
-    height: 60vh;
-    width: 90vw;
-    cursor: pointer;
-    transition: 1.5s ease-out;
-    margin-bottom: 4vh;
 }
-.card-projects:hover{
-    box-shadow: 5px 5px 5px 5px rgba(2, 10, 31, 0.59);
-    transition: all 1s;
-}
-.card-projects .foo-projects{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: auto;
-    padding: 1vw;
-}
-.card-projects h3, p{
-    margin: 0;
-}
-.card-projects p{
-    text-align: center;
-}
-.card-projects ul{
-    display: flex;
-}
-.card-projects a{
-    display: flex;
-    align-items: center;
-    padding: 0.5vh 0;
-    align-self: end;
-    margin-right: 3vw;
-    font-size: 1em;
-    gap: 1vw;
-}
-.card-projects a:hover{
-    color: rgb(93, 0, 180);
-    text-decoration: underline;
-}
-.card-projects:hover{
-    background-color: rgba(173, 173, 173, 0.786);
-}
-@media (min-width: 767px){
-    .card-projects{
-        width: 75%;
-        height: 70vh;
+@media (max-width: 767px){
+    .projects{
+        margin-left: 0;
+        padding-top: 3vh;
+        align-content: center;
+        width: 100%;
+        height: 100vh;
+        overflow-x: scroll;
     }
-    .card-projects:hover{
-        box-shadow: 5px 5px 5px 5px rgba(2, 10, 31, 0.59);
-        width: 70%;
-        transition: all 1s;
+    .box_projects {
+        width: 100%;
     }
-}
-@media (min-width: 1000px){
-    .card-projects{
-        height: 80vh;
+    .card_projects{
+        width: 90%;
     }
+    .card_projects img{
+        width: 90%;
+    }
+
 }

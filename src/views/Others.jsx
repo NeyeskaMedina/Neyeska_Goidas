@@ -1,4 +1,5 @@
 import { FaArrowCircleDown } from "react-icons/fa";
+import { Box } from "@mui/material";
 import "../css/others.css"
 
 export const Others = () => {
@@ -6,7 +7,7 @@ export const Others = () => {
     <>
     <section id="others" className="student" style={{gridArea: "ren"}}>
 {/* STUDENTS */}
-    <p className="d-inline-flex gap-1">
+    <div className="d-inline-flex gap-3">
             <button 
                 className="btn btn-primary d-flex align-items-center justify-content-center gap-1 me-2" 
                 type="button" 
@@ -16,7 +17,7 @@ export const Others = () => {
                 aria-controls="collapseExample"
             >
                 <FaArrowCircleDown className="iBtn"/>
-                <h3>Studies</h3>
+                <h1>Studies</h1>
             </button>
             <img className="ice"
                     src="/img/ice.png" 
@@ -32,7 +33,7 @@ export const Others = () => {
                 height="40px"
                 title="UEN Simon Bolivar"
             />
-    </p>
+    </div>
     <div className="collapse" id="collapseExample">
         <div className="section-info">
                 <a href="https://www.ice-aprendices.com/">Business Training Institute (ICE)</a>
@@ -47,7 +48,7 @@ export const Others = () => {
     </div>
 
 {/* JOBS */}
-    <p className="d-inline-flex gap-1">
+    <div className="d-inline-flex gap-3">
             <button 
                 className="btn btn-primary d-flex align-items-center justify-content-center gap-1 me-2" 
                 type="button" 
@@ -56,9 +57,19 @@ export const Others = () => {
                 aria-expanded="false" 
                 aria-controls="collapseExample1"
             >
-                <FaArrowCircleDown className="iBtn"/>
-                <h3>Jobs</h3>
+                {/* <FaArrowCircleDown className="iBtn"/>  */}
+                <h1> Jobs</h1>
             </button>
+            <Box sx={{
+                display: 'flex',
+                alignSelf: 'end',
+                height: '60%',
+                width: '20vw',
+                margin: '0 10px 0 10px',
+                borderTop: '2px solid white'
+                
+            }}>
+            </Box>
             <img className="america"
                     src="/img/america.png"
                     alt=""
@@ -80,7 +91,7 @@ export const Others = () => {
                     height="40px"
                     title="HSS Seguridad 09 CA"
             />
-    </p>
+    </div>
     <div className="collapse" id="collapseExample1">
         <div className="section-info">
                 <a href="https://www.aridoscalama.cl/">America Limited Company</a>
@@ -100,7 +111,7 @@ export const Others = () => {
     </div>
         
 {/* COURSE */}
-    <p className="d-inline-flex gap-1">
+    <div className="d-inline-flex gap-3">
             <button 
                 className="btn btn-primary d-flex align-items-center justify-content-center gap-1 me-2" 
                 type="button" 
@@ -110,8 +121,18 @@ export const Others = () => {
                 aria-controls="collapseExample2"
             >
                 <FaArrowCircleDown className="iBtn"/>
-                <h3>Courses</h3>
+                <h1>Courses</h1>
             </button>
+            <Box sx={{
+                display: 'flex',
+                alignSelf: 'end',
+                height: '60%',
+                width: '20vw',
+                margin: '0 10px 0 10px',
+                borderTop: '2px solid white'
+                
+            }}>
+            </Box>
             <img className="desafioLatam"
                         src="/img/desafioLatam.png" 
                         alt=""
@@ -133,7 +154,7 @@ export const Others = () => {
                         height="40px"
                         title="Fe y Alegria"
             />
-    </p>
+    </div>
     <div className="collapse" id="collapseExample2">
         <div className="section-info">
                 <a href="https://desafiolatam.com/?utm_term=desafio%20latam&utm_campaign=Brand&utm_source=adwords&utm_medium=ppc&hsa_acc=1239562006&hsa_cam=16998643182&hsa_grp=136655824715&hsa_ad=596057942540&hsa_src=g&hsa_tgt=kwd-340546658839&hsa_kw=desafio%20latam&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad=1&gclid=CjwKCAjwjaWoBhAmEiwAXz8DBQbTq_G3ysWB0qJwSsQi6RWrXlFSW_oHawPV6hE1A42e0RKQT31diBoCWfUQAvD_BwE">Latam Challenge</a>

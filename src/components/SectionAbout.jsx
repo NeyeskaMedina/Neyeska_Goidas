@@ -1,60 +1,169 @@
-import { useContext, useEffect, useState } from "react";
-import { AiFillEnvironment } from "react-icons/ai";
-import { UserContext } from "../context/UserContext";
+import { useState } from "react";
+import { Box } from "@mui/material";
+import { FaLinkedin, FaGithub, FaWhatsapp} from "react-icons/fa";
+// import { UserContext } from "../context/UserContext.jsx";
+// import { modeLigth, modeDark } from "../helper/mode";
+// import { FaMoon } from "react-icons/fa";
+// import { FaSun } from "react-icons/fa";
+import { BsPinAngle } from "react-icons/bs";
+import { PiBrainThin } from "react-icons/pi";
+import { CiHeart } from "react-icons/ci";
+import { PiMapPinLine } from "react-icons/pi";
+
+
+
+
 
 export const SectionAbout = () => {
-    const { ligthMode } = useContext(UserContext);
     const [ count, setCount ] = useState(100);
     const [ heart, setHeart ] = useState(false);
-    const handleLike = () => {
+    // const { ligthMode, setLigthMode } = useContext(UserContext);
+    const [isHover, setIsHover] = useState(false);
+    const [isHoverLinks, setIsHoverLinks] = useState(false);
+    
+
+    const handleClickLiked = () => {
         if(heart !== true){
             setCount(count + 1)
-            const like = document.querySelector('.likeds .svgHeart');
-            like.style.fill = "rgb(93, 0, 180)";
+            // const like = document.querySelector('.likeds .svgHeart');
+            // like.style.color = "rgb(93, 0, 180)";
             setHeart(true)
         } else {
-            setHeart(false);
-            const like = document.querySelector('.likeds .svgHeart');
-            ligthMode ? like.style.fill = "rgb(2, 10, 31)" : like.style.fill = "white";
             setCount(count - 1)
+            // const like = document.querySelector('.likeds .svgHeart');
+            // ligthMode ? like.style.fill = "rgb(2, 10, 31)" : like.style.fill = "white";
+            setHeart(false);
         };
+    }
+    // const getLigthMode = () => {
+    //     setLigthMode(true)
+    //     modeLigth()
+    // }
+    // const getDarkMode = () => {
+    //     setLigthMode(false)
+    //     modeDark()
+    // }
+    const handleMouseEnter = () =>{
+        setIsHover(true);
+    }
+    const handleMouseLeave = () => {
+        setIsHover(false);
+    }
+    const handleMouseEnterLinks = () =>{
+        setIsHoverLinks(true);
+    }
+    const handleMouseLeaveLinks = () => {
+        setIsHoverLinks(false);
     }
     return (
         <section className="sectionPrime">
+            <h3 className="ovo-regular">Neyeska Goidas </h3>
+            {/* {ligthMode ? <FaMoon onClick={getDarkMode} className='moon'/> : <FaSun onClick={getLigthMode} className='sun'/>} */}
             <div className="liked-img">
                 <img className='imgMe' 
                     src='/img/i.jpg'
                     alt="" 
-                    width='190px' 
-                    height='210px' 
+                    width='145px' 
+                    height='155px' 
                     title='Neyeska Goidas' 
-                    style={{border: "1px solid rgb(93, 0, 180)"}}
+                    style={{border: "18px solid white"}}
                 />
-                <div className="likeds">
-                    <svg className="svgHeart" onClick={handleLike} fill="#ffffff" stroke="none" version="1.0" xmlns="http://www.w3.org/2000/svg"
-                        width="25px" height="25px" viewBox="0 0 1280.000000 1189.000000"
-                        preserveAspectRatio="xMidYMid meet">
-                    <g transform="translate(0.000000,1189.000000) scale(0.100000,-0.100000)"
+                <Box 
+                    className="likeds ovo-regular"
+                    onMouseEnter={handleMouseEnter} 
+                    onMouseLeave={handleMouseLeave}
+                    onClick={handleClickLiked}
+                >
+                    <CiHeart 
+                        className='svgHeart'
+                        size={30} 
+                        style={{ color: isHover ?  'white' : "" }}
+                        color="#020A1F"
+                    />
+
+                    <p className="ovo-regular" 
+                        style={{
+                            fontSize: '20px', 
+                            color: isHover ?  'white' : '#020A1F',
+                            margin: '0px'
+                        }}
                     >
-                    <path d="M2980 11763 c-848 -26 -1656 -457 -2177 -1163 -739 -1002 -839 -2418
-                    -277 -3927 742 -1992 2563 -4072 5324 -6084 234 -171 529 -379 545 -385 18 -7
-                    441 293 890 630 1976 1483 3442 3004 4339 4499 570 950 892 1837 993 2742 21
-                    188 24 685 5 855 -52 462 -163 855 -343 1214 -166 330 -337 565 -602 823 -215
-                    209 -424 359 -687 492 -449 228 -892 322 -1410 299 -991 -43 -1937 -632 -2597
-                    -1618 -171 -255 -391 -672 -513 -972 -35 -87 -67 -155 -71 -150 -4 4 -35 77
-                    -70 162 -82 201 -255 547 -362 727 -626 1046 -1484 1677 -2483 1828 -114 17
-                    -375 32 -504 28z"/>
-                    </g>
-                    </svg>
-                    <p>{count} Like</p>
-                </div>
+                            {count} Like
+                    </p>
+                </Box>
             </div>
             <main className='descriptionPrime'>
-                <h4>Hi, tell me Neye 🚀</h4>
-                <p>🥇I'm Develop Web Fullstack</p>
-                <a href="https://desafiosdev.s3.amazonaws.com/uploads/certification/image/31361/certificacion-aprobacion-de-carrera-nuevo-proyecto-final-g43-14335(3).png" style={{textAlign: "center"}}>📌Title</a>
-                <p className="pUbi"><AiFillEnvironment className="iconUbi"/> Chile</p>
-            </main>        
+                <Box sx={{display: 'flex', width: '100%', justifyContent: 'center'}}>
+                    <h5 style={{margin: '0 5px 0 0'}}>Hi, tell me Neye </h5>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" width={"25px"} height={"25px"}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
+                    </svg>
+                </Box>
+                <Box sx={{display: 'flex', flexDirection: 'column', width: '100%', justifyContent: 'center'}}>
+                    <p style={{margin: '0 0 0 5px'}}><PiBrainThin size={25}/> Develop Web Fullstack</p>
+                    <a
+                        style={{margin: '0 0 0 5px', textAlign: "center", padding: '0'}}
+                        href="https://desafiosdev.s3.amazonaws.com/uploads/certification/image/31361/certificacion-aprobacion-de-carrera-nuevo-proyecto-final-g43-14335(3).png"><BsPinAngle size={20}/> Title</a>
+                    <p style={{margin: '0 0 0 5px', textAlign: 'center'}} className="pUbi"><PiMapPinLine size={20}/>  Chile</p>
+                </Box>
+            </main>  
+            <Box sx={{ className: 'NavLinks', display: 'flex', flexDirection: 'column', justifyItems: 'center', gap: '10px', width:'100%'}}
+               
+            >
+                <a href="https://github.com/NeyeskaMedina" 
+                    //  onMouseEnter={handleMouseEnterLinks}
+                    //  onMouseLeave={handleMouseLeaveLinks}
+                    style={{ 
+                        display: 'flex', 
+                        textAlign: 'center', 
+                        justifyContent: 'space-around', 
+                        alignSelf: 'center',
+                        alignItems: 'center', 
+                        backgroundColor: "white", 
+                        padding: '5px',
+                        color: "rgba(27, 33, 49, 0.497)",
+                        width: '70%',
+                        fontSize: 'larger'
+                    }}
+                >
+                    <FaGithub style={{color: isHoverLinks ? "rgb(2, 10, 31)" : "rgba(27, 33, 49, 0.497)", fontSize: "2em"}}/> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/neyeska-medina" 
+                    style={{ 
+                        display: 'flex', 
+                        textAlign: 'center', 
+                        justifyContent: 'space-around', 
+                        alignSelf: 'center',
+                        alignItems: 'center', 
+                        backgroundColor: "white", 
+                        padding: '5px',
+                        color: "rgba(27, 33, 49, 0.497)",
+                        width: '70%',
+                        fontSize: 'larger'
+                    }}
+                >
+                    <FaLinkedin style={{color: "rgba(27, 33, 49, 0.497)", fontSize: "2em"}}/>
+                    Linkedin
+                </a>
+                <a href="https://wa.me/56962066078" 
+                    style={{ 
+                        display: 'flex', 
+                        textAlign: 'center', 
+                        justifyContent: 'space-around', 
+                        alignSelf: 'center',
+                        alignItems: 'center', 
+                        backgroundColor: "white", 
+                        padding: '5px',
+                        color: 'rgba(27, 33, 49, 0.497)',
+                        width: '70%',
+                        fontSize: 'larger'
+                    }}
+                >
+                    <FaWhatsapp style={{color: "rgba(27, 33, 49, 0.497)", fontSize: "2em"}}/>
+                    {/* <i class="fa-brands fa-whatsapp fa-xl"></i> */}
+                    Whatsapp
+                </a>
+            </Box>
         </section>
     )
 }
