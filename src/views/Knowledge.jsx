@@ -5,7 +5,7 @@ import '../css/knowledge.css';
 export const Knowledge = () => {
   return (
     <>
-    <section id="knowledge" className="knowledges ovo-regular" style={{gridArea: "ren"}}>
+    <section id="knowledge" className="knowledges ovo-regular" style={{gridArea: "ren", margin: '8vh 0px 10vh 0px'}}>
             <h3>Languages</h3>
             <div className="languages">
                 <h5 style={{backgroundColor: "orange"}}> JavaScript</h5>

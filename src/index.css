@@ -13,7 +13,7 @@
     font-weight: 400;
     font-style: normal;
 }
-  
+
 body{
     font-family: monospace;
     background-color: #020a1f;
@@ -36,6 +36,7 @@ a:link{
 nav{
     grid-area: nav;
     display: flex;
+    position: fixed;
     width: 100vw;
     padding-left: 10px;
     flex-direction: column;
@@ -83,47 +84,64 @@ nav .collapse{
 }
 /* SectionPrime */
 .sectionPrime{
-    position: absolute;
-    grid-area: sec;
     display: none;
 }
-.sectionPrime .imgMe{
+/* MODAL ABOUTME */
+.modalAboutme{
+    grid-area: sec;
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    justify-content: start;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background-color: #020A1F;
+    border: 0;
+    padding: 1.5vw;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+.modalAboutme.show {
+    display: flex;
+    opacity: 1;
+}
+.modalAboutme-content {
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+}
+.modalAboutme h1{
+    text-align: center;
+    margin: 0 0 2vh 0;
+    cursor: pointer;
+    font-size: 28px;
+    gap: 1vw;
+    letter-spacing: 2px;
+}
+.modalAboutme .imgMe2{
     border-radius: 50%;
     cursor: pointer;
 }
-.sectionPrime .liked-img{
+.modalAboutme .liked-img2{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1vw;
 }
-.sectionPrime h3{
-    display: flex;
-    align-items: center;
-    margin: 0;
-    cursor: pointer;
-    gap: 1vw;
-    letter-spacing: 2px;
-}
-.sectionPrime .svgRocket{
-    font-size: 18px;
-}
-.sectionPrime.sun{
-    color: rgb(255, 255, 255);
-}
-/* .sectionPrime .sun:hover{
-    color:  rgb(93, 0, 180) !important;
-} */
-.sectionPrime .moon{
-    color: rgb(2, 10, 31);
-}
-/* .sectionPrime .moon:hover{
-    color:  rgb(93, 0, 180) !important;
-} */
-.aLinks:hover{
-    color: rgb(2, 10, 31);
-}
-.likeds{
+.likeds2{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,17 +149,12 @@ nav .collapse{
     cursor: pointer;
     padding: 10px;
     border-radius: 20px;
-    border: 1px solid #020A1F;
+    border: 1px solid white;
     gap: 1vw;
 }
 
-.likeds:hover{
-    background-color: #020A1F;
-}
-
-.sectionPrime h2:hover{
-    color: red;
-
+.likeds2:hover{
+    background-color: white;
 }
 .iconUbi{
     font-size: 1.4em;
@@ -173,6 +186,7 @@ nav .collapse{
     border-radius: .5em;
     list-style: none;
     white-space: nowrap;
+    font-size: 16px;
 }
 @media (min-width: 767px) {
     #root{
@@ -222,6 +236,7 @@ nav .collapse{
         background-color: #020A1F;
     }
     .sectionPrime{
+        grid-area: sec;
         position: fixed;
         display: flex;
         flex-direction: column;
@@ -232,10 +247,66 @@ nav .collapse{
         border: 0;
         padding: 1.5vw;
     }
-    .sectionPrime .imgMe{
-        width: 225px;
-        height: 225px;
+    .sectionPrime h3{
+        display: flex;
+        visibility: visible;
+        align-items: center;
+        margin: 0;
+        cursor: pointer;
+        gap: 1vw;
+        letter-spacing: 2px;
     }
+    .sectionPrime .imgMe{
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .sectionPrime .liked-img{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1vw;
+    }
+    .sectionPrime h3{
+        visibility: hidden;
+    }
+    .sectionPrime .svgRocket{
+        font-size: 18px;
+    }
+    .sectionPrime.sun{
+        color: rgb(255, 255, 255);
+    }
+    /* .sectionPrime .sun:hover{
+        color:  rgb(93, 0, 180) !important;
+    } */
+    /* .sectionPrime .moon{
+        color: rgb(2, 10, 31);
+    }
+    /* .sectionPrime .moon:hover{
+        color:  rgb(93, 0, 180) !important;
+    } */
+    .aLinks:hover{
+        color: rgb(2, 10, 31);
+    }
+    .likeds{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 20px;
+        border: 1px solid #020A1F;
+        gap: 1vw;
+    }
+    
+    .likeds:hover{
+        background-color: #020A1F;
+    }
+    
+    .sectionPrime h2:hover{
+        color: red;
+    
+    } 
 }
 @media (max-width: 767px){
     .card_projects{

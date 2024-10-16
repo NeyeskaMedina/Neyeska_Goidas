@@ -5,7 +5,7 @@ import "../css/others.css"
 export const Others = () => {
     return (
     <>
-    <section id="others" className="student ovo-regular" style={{gridArea: "ren", textAlign: 'center'}}>
+    <section id="others" className="student ovo-regular" style={{gridArea: "ren", textAlign: 'center', margin: '8vh 0px 10vh 0px'}}>
 {/* STUDENTS */}
     <Box sx={{display: 'flex', flexDirection: 'column'}}>
         <Box sx={{display: 'flex', alignItems: 'center'}}>
@@ -180,7 +180,7 @@ export const Others = () => {
                 <p>Multiple machinery operator</p>
                 <p>Feb 2022 / Aug 2022</p>
         </Box>
-        <Box sx={{display: 'flex', flexDirection: 'column'}}>
+        <Box sx={{display: 'flex', flexDirection: 'column', marginBottom: '12vh'}}>
             <img 
                 className="feyAlegria"
                 src="/img/feyAlegria.png" 

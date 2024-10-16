@@ -4,7 +4,7 @@ import { Box } from "@mui/material";
 export const Projects = () => {
     return (
     <>
-    <section id="projects" className="projects" style={{gridArea: "ren", alignItems: 'center', paddingBottom: '10vh'}}>
+    <section id="projects" className="projects" style={{gridArea: "ren", alignItems: 'center', paddingBottom: '10vh', margin: '8vh 0px 0px 0px'}}>
         <h1 className='ovo-regular'
             style={{
                 padding: "1vw",

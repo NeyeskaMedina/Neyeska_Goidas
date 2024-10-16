@@ -1,15 +1,21 @@
 import { FiMenu } from "react-icons/fi";
 import { NavLink, Link } from "react-router-dom";
+import { useState } from "react";
+import ModalMenu from "../components/ModalMenu.jsx";
 
 
 
 export const Navbar = () => {
-const handleClick = (e) => {
-    e.preventDefault();
-    console.log(e);
-    
-}
+  const [ openModal, setOpenModal ] = useState(false);
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    setOpenModal(true);
+  }
+
+  const handleClose = () => {
+    setOpenModal(false);
+  }
 
   return (
     <>
@@ -31,6 +37,7 @@ const handleClick = (e) => {
           <h1 className='iconBurguer' style={{margin: '0 0 0 20px', cursor: 'pointer' }}>Neyeska Goidas</h1>
           </div>
       </nav>
+      <ModalMenu openModal={openModal} handleClose={handleClose} />
     </>
   );
 }

@@ -6,7 +6,6 @@
     gap: 3vh;
     padding-top: 3vh;
     margin-left: 25vw;
-    height: 100vh;
     width: 75vw;
 }
 .card_projects{
@@ -33,8 +32,6 @@
         padding-top: 3vh;
         align-content: center;
         width: 100%;
-        height: 100vh;
-        overflow-x: scroll;
     }
     .box_projects {
         width: 100%;
