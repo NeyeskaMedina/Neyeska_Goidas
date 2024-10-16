@@ -16,7 +16,7 @@
   
 body{
     font-family: monospace;
-    background-color: rgb(2, 10, 31);
+    background-color: #020a1f;
     color: white;
 }
 .active{
@@ -86,18 +86,6 @@ nav .collapse{
     position: absolute;
     grid-area: sec;
     display: none;
-    /* width: 100vw;
-    height: 25vw;
-    gap: 2vw;
-    padding-top: 3vh;
-    padding-bottom: 3vh;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    background-color: #1b2131;
-    justify-content: center;
-    align-items: center;
-    border-bottom: rgb(93, 0, 180); */
-    /* border-bottom: 1px solid rgb(2, 10, 31); */
 }
 .sectionPrime .imgMe{
     border-radius: 50%;
@@ -168,14 +156,10 @@ nav .collapse{
     width: 100vw;
     height: auto;
     background-color: #131824;
-    /* border-bottom: 1px solid rgb(2, 10, 31); */
-    overflow-x: scroll;
-    overflow-y: hidden;
 }
 .navegationTwo ul{
     display: flex;
     justify-content: space-between;
-    gap: 3vh;
     align-items: center;
     width: 100%;
     margin: 0;
@@ -189,10 +173,6 @@ nav .collapse{
     border-radius: .5em;
     list-style: none;
     white-space: nowrap;
-}
-.navegationTwo li a:hover{
-    background-color: rgba(204, 204, 204, 0.632);
-    /* color: rgb(93, 0, 180) !important; */
 }
 @media (min-width: 767px) {
     #root{
@@ -251,8 +231,6 @@ nav .collapse{
         background-color: #9DACB5;
         border: 0;
         padding: 1.5vw;
-        border-right: 1px solid rgb(93, 0, 180);
-        /* border-right: 1px solid rgb(2, 10, 31); */
     }
     .sectionPrime .imgMe{
         width: 225px;

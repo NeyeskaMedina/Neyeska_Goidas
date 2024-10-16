@@ -4,6 +4,13 @@
     flex-direction: column;
     row-gap: 2vh;
     padding: 5vh;
+    width: 100%;
+}
+.student img{
+    margin: 10px !important;
+}
+.student a{
+    font-size: 22px;
 }
 .student h3{
     margin: 0;
