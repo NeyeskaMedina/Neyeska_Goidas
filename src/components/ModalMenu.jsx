@@ -59,7 +59,9 @@ export const ModalMenu = ({ openModal, handleClose }) => {
     return (
         <section className={`modalAboutme ${openModal ? 'show' : ''}`} onClick={handleClose}>
             <Box className="modalAboutme-content" onClick={(e) => e.stopPropagation()}>
-                    <MdClose size={25} onClick={handleClose} />
+                    <Box sx={{display: 'flex', width:'100%', justifyContent: 'end'}}>
+                        <MdClose style={{cursor: 'pointer'}} size={30} onClick={handleClose} />
+                    </Box>
                     <h1 className="ovo-regular">Neyeska Goidas </h1>
                 {/* {ligthMode ? <FaMoon onClick={getDarkMode} className='moon'/> : <FaSun onClick={getLigthMode} className='sun'/>} */}
                 <div className="liked-img2">

@@ -107,7 +107,7 @@ export const SectionAbout = () => {
                     <p style={{margin: '0 0 0 5px', textAlign: 'center'}} className="pUbi"><PiMapPinLine size={20}/>  Chile</p>
                 </Box>
             </main>  
-            <Box sx={{ className: 'NavLinks', display: 'flex', flexDirection: 'column', justifyItems: 'center', gap: '10px', width:'100%'}}
+            <Box sx={{ className: 'navLinks', display: 'flex', flexDirection: 'column', justifyItems: 'center', gap: '10px', width:'100%'}}
                
             >
                 <a href="https://github.com/NeyeskaMedina" 
@@ -126,7 +126,7 @@ export const SectionAbout = () => {
                         fontSize: 'larger'
                     }}
                 >
-                    <FaGithub style={{color: isHoverLinks ? "rgb(2, 10, 31)" : "rgba(27, 33, 49, 0.497)", fontSize: "2em"}}/> GitHub
+                    <FaGithub style={{color: "rgba(27, 33, 49, 0.497)", fontSize: "2em"}}/> GitHub
                 </a>
                 <a href="https://www.linkedin.com/in/neyeska-medina" 
                     style={{ 

@@ -24,7 +24,7 @@ body{
 }
 /* Global */
 a{
-    color: rgb(255, 255, 255);
+    color: lightskyblue;
     font-weight: bold;
 }
 a:link{
@@ -56,6 +56,9 @@ nav .navBar{
 }
 .navBar .ulViewXL{
     visibility: hidden;
+}
+.navBar a{
+    color: white !important;
 }
 
 nav ul{
@@ -160,6 +163,10 @@ nav .collapse{
     font-size: 1.4em;
     color: rgb(0, 123, 255);
 }
+/* SECTION ABOUT ME */
+/* .navLinks a:hover{
+    background-color: rgba(255, 255, 255, 0) !important;
+} */
 /* Barra navegaciòn 2 */
 .navegationTwo{
     grid-area: na2;
@@ -186,7 +193,11 @@ nav .collapse{
     border-radius: .5em;
     list-style: none;
     white-space: nowrap;
-    font-size: 16px;
+    font-size: 14px;
+}
+.navegationTwo a{
+    color: rgb(255, 255, 255) !important;
+    font-weight: lighter !important;
 }
 @media (min-width: 767px) {
     #root{
@@ -232,9 +243,9 @@ nav .collapse{
     .navegationTwo{
         visibility: hidden;
     }
-    .navegationTwo li a:hover{
+    /* .navegationTwo li a:hover{
         background-color: #020A1F;
-    }
+    } */
     .sectionPrime{
         grid-area: sec;
         position: fixed;

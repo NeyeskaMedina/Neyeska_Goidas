@@ -1,4 +1,5 @@
 import '../css/knowledge.css';
+import { Box } from "@mui/material";
 
 
 
@@ -6,7 +7,10 @@ export const Knowledge = () => {
   return (
     <>
     <section id="knowledge" className="knowledges ovo-regular" style={{gridArea: "ren", margin: '8vh 0px 10vh 0px'}}>
-            <h3>Languages</h3>
+            <Box sx={{display: 'flex', alignItems: 'center', margin: '4vh 0 4vh 0', justifyContent: 'start'}}>
+                <h3>Languages</h3>
+                <Box sx={{width: '45%', height: '2px', backgroundColor: 'white' }}></Box>
+            </Box>
             <div className="languages">
                 <h5 style={{backgroundColor: "orange"}}> JavaScript</h5>
                 <p>Desafio Latam /</p>
@@ -30,7 +34,10 @@ export const Knowledge = () => {
                 <h5 style={{backgroundColor: "#00a2a5"}}> Visual Basic</h5>
                 <p>Autodidact</p>
             </div>
-            <h3 className="frames">FrameWorks and libraries</h3>
+            <Box sx={{display: 'flex', alignItems: 'center', margin: '4vh 0 4vh 0', justifyContent: 'start'}}>
+                <h3>FrameWorks and Libraries</h3>
+                <Box sx={{width: '45%', height: '2px', backgroundColor: 'white' }}></Box>
+            </Box>
             <div className="languages">
                 <h5 style={{backgroundColor: "#3c873a"}}>Nodejs</h5>
                 <p>Desafio Latam /</p>
@@ -62,12 +69,15 @@ export const Knowledge = () => {
                 <h5 style={{backgroundColor: "#f9bd31"}}> Postman</h5>
                 <p>Api Tool</p>
             </div>
-            <h3>Terminal</h3>
+            <Box sx={{display: 'flex', alignItems: 'center', margin: '4vh 0 4vh 0', justifyContent: 'start'}}>
+                <h3>Terminal</h3>
+                <Box sx={{width: '45%', height: '2px', backgroundColor: 'white' }}></Box>
+            </Box>
             <div className="languages">
                 <h5 style={{backgroundColor: "#0dd84d"}}> Git</h5>
                 <p>Terminal</p>
             </div>
-            <div className="languages">
+            <div className="languages" style={{marginBottom: '4vh'}}>
                 <h5 style={{backgroundColor: "#000000"}}> GitHub</h5>
                 <p>Version Control</p>
             </div>

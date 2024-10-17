@@ -10,18 +10,18 @@ a:hover{
 }
 .knowledges h3{
     width: 40%;
+    color: white;
     padding-left: 1vw;
-    margin-top: 2vh;
+    padding-right: 10px;
     padding-bottom: 0.5vw;
     text-align: start;
-    border-bottom: 2px rgb(93, 0, 180) solid;
 }
 .frames{
     padding-top: 1vh;
 }
-.knowledges div{
-    margin-top: 4vh;
-    /* margin-left: 6vw; */
+.knowledges .languages{
+    margin-left: 6vw;
+    margin-bottom: 2vh;
     align-items: center;
     color: rgb(84, 84, 84);
 }
