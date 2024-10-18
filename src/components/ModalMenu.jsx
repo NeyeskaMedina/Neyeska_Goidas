@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Box } from "@mui/material";
 import { FaLinkedin, FaGithub, FaWhatsapp} from "react-icons/fa";
 // import { UserContext } from "../context/UserContext.jsx";
@@ -21,11 +21,26 @@ export const ModalMenu = ({ openModal, handleClose }) => {
     // const { ligthMode, setLigthMode } = useContext(UserContext);
     const [isHover, setIsHover] = useState(false);
     const [isHoverLinks, setIsHoverLinks] = useState(false);
+    const [isGifActive, setIsGifActive] = useState(false);
+    const bgImg = {
+        backgroundImage: `url(/img/gif1.gif)`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+    }
+    useEffect(() => {
+        if (isGifActive) {
+          const timer = setTimeout(() => {
+            setIsGifActive(false);
+          }, 4000); 
     
+          return () => clearTimeout(timer); 
+        }
+      }, [isGifActive]);
 
     const handleClickLiked = () => {
         if(heart !== true){
             setCount(count + 1)
+            setIsGifActive(true);
             // const like = document.querySelector('.likeds .svgHeart');
             // like.style.color = "rgb(93, 0, 180)";
             setHeart(true)
@@ -34,8 +49,10 @@ export const ModalMenu = ({ openModal, handleClose }) => {
             // const like = document.querySelector('.likeds .svgHeart');
             // ligthMode ? like.style.fill = "rgb(2, 10, 31)" : like.style.fill = "white";
             setHeart(false);
+            setIsGifActive(false);
         };
     }
+    
     // const getLigthMode = () => {
     //     setLigthMode(true)
     //     modeLigth()
@@ -58,7 +75,7 @@ export const ModalMenu = ({ openModal, handleClose }) => {
     }
     return (
         <section className={`modalAboutme ${openModal ? 'show' : ''}`} onClick={handleClose}>
-            <Box className="modalAboutme-content" onClick={(e) => e.stopPropagation()}>
+            <Box sx={{...(isGifActive && bgImg)}} className="modalAboutme-content" onClick={(e) => e.stopPropagation()}>
                     <Box sx={{display: 'flex', width:'100%', justifyContent: 'end'}}>
                         <MdClose style={{cursor: 'pointer'}} size={30} onClick={handleClose} />
                     </Box>
@@ -96,7 +113,9 @@ export const ModalMenu = ({ openModal, handleClose }) => {
                                 {count} Like
                         </p>
                     </Box>
+                    
                 </div>
+                
                 <main className='descriptionPrime2'>
                     <Box sx={{display: 'flex', width: '100%', justifyContent: 'center', margin: '15px 0px 0px 0px'}}>
                         <h5 style={{margin: '0 5px 0 0'}}>Hi, tell me Neye </h5>
