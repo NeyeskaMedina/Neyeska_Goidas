@@ -12,6 +12,7 @@ export const About = () => {
         <h1 className='ovo-regular'
             style={{
                 padding: "1vw",
+                marginTop: "5vh",
                 width: "85%",
                 textAlign: "center"
             }}

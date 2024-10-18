@@ -45,6 +45,7 @@ nav{
     height: 8vh;
     font-size: 22px;
     background-color: #020A1F;
+    z-index: 1000;
 }
 nav .navBar{
     display: flex;
@@ -209,27 +210,33 @@ nav .collapse{
         'sec sec ren ren ren ren';
     }
     nav{
+        width: 65vw;
         height: 6vh;
-        margin-left: 350px;
+        position: relative;
+        display: flex;
+        justify-content: end;
+        left: 25vw;
+        z-index: 1000;
     }
     nav .navBar{
+        display: flex;
         height: 6vh;
         padding: 1vw;
         justify-content: end;
     }
-    .navBar{
-        justify-content: space-between;
-    }
     .ulViewXL{
         visibility: visible !important;
         display: flex;
+        width: 100%;
         flex-direction: row;
+        justify-content: end;
         position: sticky;
+        z-index: 1000;
         padding: 0;
         align-items: center;
         row-gap: 1vw;
         margin: 0;
-        background-color:rgba(240, 255, 255, 0);
+        background-color:#020A1F;
     }
     .ulViewXL li a{
         padding: 0.3vw;
@@ -252,17 +259,18 @@ nav .collapse{
         display: flex;
         flex-direction: column;
         justify-content: start;
-        width: 350px;
+        width: 30vw;
         height: 100vh;
         background-color: #9DACB5;
         border: 0;
         padding: 1.5vw;
+        z-index: 1;
     }
     .sectionPrime h3{
         display: flex;
-        visibility: visible;
-        align-items: center;
-        margin: 0;
+        width: 100%;
+        justify-content: center;
+        margin: 0 0 25px 0;
         cursor: pointer;
         gap: 1vw;
         letter-spacing: 2px;
@@ -276,9 +284,6 @@ nav .collapse{
         flex-direction: column;
         align-items: center;
         gap: 1vw;
-    }
-    .sectionPrime h3{
-        visibility: hidden;
     }
     .sectionPrime .svgRocket{
         font-size: 18px;

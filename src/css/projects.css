@@ -2,11 +2,10 @@
     grid-area: ren;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 3vh;
-    padding-top: 3vh;
-    margin-left: 25vw;
-    width: 75vw;
+    position: relative;
+    width: 70vw;
+    top: 0;
+    left: 20vw;
 }
 .card_projects{
     display: flex;
@@ -17,6 +16,10 @@
     border-top: 1px solid white;
     margin-bottom: 40px;
     justify-content: space-between;
+}
+.card_projects img{
+    position: relative;
+    z-index: 0;
 }
 .box_projects{
     display: flex;
@@ -30,6 +33,7 @@
     .projects{
         margin-left: 0;
         padding-top: 3vh;
+        left: 0;
         align-content: center;
         width: 100%;
     }

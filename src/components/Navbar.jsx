@@ -21,13 +21,6 @@ export const Navbar = () => {
     <>
       <nav>
           <div className='navBar ovo-regular'>
-          <ul className='ulViewXL'>
-                <li><NavLink to="/about">About me</NavLink></li>
-                <li><NavLink to="/">Projects</NavLink></li>
-                <li><NavLink to="/knowledge">Knowledge</NavLink></li>
-                <li><NavLink to="/others">Others</NavLink></li>
-          </ul>
-
           <FiMenu
               className='iconBurguer'
               style={{cursor: 'pointer'}}
@@ -35,6 +28,13 @@ export const Navbar = () => {
               onClick={handleClick}
           />
           <h1 className='iconBurguer' style={{margin: '0 0 0 20px', cursor: 'pointer' }}>Neyeska Goidas</h1>
+
+          <ul className='ulViewXL'>
+                <li><NavLink to="/about">About me</NavLink></li>
+                <li><NavLink to="/">Projects</NavLink></li>
+                <li><NavLink to="/knowledge">Knowledge</NavLink></li>
+                <li><NavLink to="/others">Others</NavLink></li>
+          </ul>
           </div>
       </nav>
       <ModalMenu openModal={openModal} handleClose={handleClose} />

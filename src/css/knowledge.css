@@ -4,9 +4,12 @@ a:hover{
 }
 .knowledges{
     grid-area: ren;
-    padding-left: 5vw;
-    padding-right: 2vw;
-    padding-bottom: 2vh;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
 }
 .knowledges h3{
     width: 40%;
@@ -52,7 +55,9 @@ a:hover{
 }
 @media (min-width: 767px) {
     .knowledges{
+        position: relative;
         width: 60vw;
+        left: 20vw;
     }
 
 }

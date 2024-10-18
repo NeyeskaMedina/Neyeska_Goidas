@@ -4,8 +4,12 @@
     flex-direction: column;
     row-gap: 2vh;
     padding: 5vh;
+    margin: 8vh 0px 10vh 0px;
     width: 100%;
     height: 100vh;
+    position: relative;
+    z-index: 1;
+    left: 0;
 }
 .student img{
     margin: 10px !important;
@@ -46,7 +50,17 @@
     .student{
         width: 65vw;
         height: 95vh;
-        padding: 8vh;
-        margin-left: 30vw;
+        padding: 2vh;
+        margin: 2vh 2vh 2vh 4vh;
+        position: relative;
+        z-index: 1;
+        left: 20vw;
+        top: 0;
     }
+    .student .card_Other{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
 }
