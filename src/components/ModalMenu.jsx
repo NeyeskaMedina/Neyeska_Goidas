@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Box } from "@mui/material";
 import { FaLinkedin, FaGithub, FaWhatsapp} from "react-icons/fa";
 // import { UserContext } from "../context/UserContext.jsx";
@@ -10,6 +10,8 @@ import { PiBrainThin } from "react-icons/pi";
 import { CiHeart } from "react-icons/ci";
 import { PiMapPinLine } from "react-icons/pi";
 import { MdClose } from "react-icons/md";
+import Google from "./Google";
+import { UserContext } from "../context/UserContext";
 
 
 
@@ -21,26 +23,30 @@ export const ModalMenu = ({ openModal, handleClose }) => {
     // const { ligthMode, setLigthMode } = useContext(UserContext);
     const [isHover, setIsHover] = useState(false);
     const [isHoverLinks, setIsHoverLinks] = useState(false);
-    const [isGifActive, setIsGifActive] = useState(false);
+    const [openGoogle, setOpenGoogle] = useState(false);
+    const {send, setSend} = useContext(UserContext)
+    
+
     const bgImg = {
         backgroundImage: `url(/img/gif1.gif)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
     }
     useEffect(() => {
-        if (isGifActive) {
+        if (send) {
           const timer = setTimeout(() => {
-            setIsGifActive(false);
-          }, 4000); 
+            setSend(false);
+          }, 5000); 
     
           return () => clearTimeout(timer); 
         }
-      }, [isGifActive]);
+      }, [send]);
 
     const handleClickLiked = () => {
         if(heart !== true){
             setCount(count + 1)
-            setIsGifActive(true);
+            // setIsGifActive(true);
+            setOpenGoogle(true)
             // const like = document.querySelector('.likeds .svgHeart');
             // like.style.color = "rgb(93, 0, 180)";
             setHeart(true)
@@ -49,9 +55,12 @@ export const ModalMenu = ({ openModal, handleClose }) => {
             // const like = document.querySelector('.likeds .svgHeart');
             // ligthMode ? like.style.fill = "rgb(2, 10, 31)" : like.style.fill = "white";
             setHeart(false);
-            setIsGifActive(false);
+            // setIsGifActive(false);
         };
     }
+    const handleCloseGoogle = () => {
+        setOpenGoogle(false);
+      }
     
     // const getLigthMode = () => {
     //     setLigthMode(true)
@@ -75,7 +84,7 @@ export const ModalMenu = ({ openModal, handleClose }) => {
     }
     return (
         <section className={`modalAboutme ${openModal ? 'show' : ''}`} onClick={handleClose}>
-            <Box sx={{...(isGifActive && bgImg)}} className="modalAboutme-content" onClick={(e) => e.stopPropagation()}>
+            <Box sx={{...(send && bgImg)}} className="modalAboutme-content" onClick={(e) => e.stopPropagation()}>
                     <Box sx={{display: 'flex', width:'100%', justifyContent: 'end'}}>
                         <MdClose style={{cursor: 'pointer'}} size={30} onClick={handleClose} />
                     </Box>
@@ -113,7 +122,7 @@ export const ModalMenu = ({ openModal, handleClose }) => {
                                 {count} Like
                         </p>
                     </Box>
-                    
+                    <Google openGoogle={openGoogle} handleCloseGoogle={handleCloseGoogle} />
                 </div>
                 
                 <main className='descriptionPrime2'>
@@ -131,7 +140,7 @@ export const ModalMenu = ({ openModal, handleClose }) => {
                         <p style={{margin: '0 0 0 5px', textAlign: 'center'}} className="pUbi"><PiMapPinLine size={20}/>  Chile</p>
                     </Box>
                 </main>  
-                <Box sx={{ className: 'NavLinks2', display: 'flex', flexDirection: 'column', justifyItems: 'center', gap: '10px', width:'100%', marginTop: '15px'}}
+                <Box sx={{ className: 'NavLinks2', display: 'flex', flexDirection: 'column', justifyItems: 'center', gap: '10px', width:'100%', marginTop: '40px'}}
 
                 >
                     <a href="https://github.com/NeyeskaMedina" 

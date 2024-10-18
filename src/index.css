@@ -90,6 +90,41 @@ nav .collapse{
 .sectionPrime{
     display: none;
 }
+/* MODAL GOOGLE */
+.modalGoogle{
+    grid-area: sec;
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    z-index: 1000;
+    width: 100%;
+    height: 70%;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+    background-color: #020A1F;
+    padding: 1.5vw;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+.modalGoogle-content {
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+}
 /* MODAL ABOUTME */
 .modalAboutme{
     grid-area: sec;
@@ -108,7 +143,8 @@ nav .collapse{
     transition: opacity 0.5s ease;
     opacity: 0;
 }
-.modalAboutme.show {
+
+.modalAboutme.show, .modalGoogle.show {
     display: flex;
     opacity: 1;
 }
@@ -117,19 +153,13 @@ nav .collapse{
     border-radius: 5px;
     max-width: 500px;
     width: 100%;
+    height: 90%;
     text-align: center;
     position: relative;
 }
-.close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 30px;
-    cursor: pointer;
-}
 .modalAboutme h1{
     text-align: center;
-    margin: 0 0 2vh 0;
+    margin: 0 0 4vh 0;
     cursor: pointer;
     font-size: 28px;
     gap: 1vw;
