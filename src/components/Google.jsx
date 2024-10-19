@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Box, TextField, Button, Typography } from '@mui/material';
 import { FcGoogle } from 'react-icons/fc';
 import { UserContext } from '../context/UserContext';
@@ -7,7 +7,7 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { addLikeBack } from '../apiBack/postBackend.js';
 
-export const Google = ({ openGoogle, handleCloseGoogle }) => {
+export const Google = ({ openGoogle, handleCloseGoogle, openModal }) => {
     const [email, setEmail] = useState('');
     const [emailError, setEmailError] = useState(false); 
     const [nameError, setNameError] = useState(false);
@@ -16,6 +16,11 @@ export const Google = ({ openGoogle, handleCloseGoogle }) => {
     const [name, setName] = useState("");
     const [check, setCheck] = useState(false);
     
+    useEffect(() => {
+        if (openModal) {
+            handleCloseGoogle();  // Llama a la función de cierre cuando se presione la "X" del modal principal
+        }
+    }, [openModal]);
 
     const validateEmail = (email) => {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

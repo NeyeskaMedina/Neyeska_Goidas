@@ -72,7 +72,7 @@ export const ModalMenu = ({ openModal, handleClose }) => {
                         style={{ border: "10px solid white", marginBottom: '15px' }}
                     />
                     <Likes heart={heart} handleLikeClick={handleLikeClick} like={like} />
-                    <Google openGoogle={openGoogle} handleCloseGoogle={handleCloseGoogle} />
+                    <Google openGoogle={openGoogle} handleCloseGoogle={handleCloseGoogle} openModal={openModal} />
                 </div>
                 
                 <main className='descriptionPrime2'>
