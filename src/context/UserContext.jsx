@@ -11,16 +11,17 @@ export const ContextProvider = ( {children} ) =>{
     useEffect(() =>{
         const getLikesBack = async () =>{
             const res = await getLikes()
+            const resul = res.response.cantLike[0].count; 
             console.log(res);
             
             if(res.loading){
-                setLike(res.response.cantLike[0].count);
+                setLike(parseInt(resul));
             }else{
                 console.log('no likes')
             }
         }
           getLikesBack()  
-    }, [like])
+    }, [])
 
     const sharedContext = {
         ligthMode,

@@ -25,7 +25,6 @@ export const ModalMenu = ({ openModal, handleClose }) => {
     const [openGoogle, setOpenGoogle] = useState(false);
     const {send, setSend} = useContext(UserContext);
     const { like, setLike } = useContext(UserContext);
-    
 
     const bgImg = {
         backgroundImage: `url(/img/gif1.gif)`,
