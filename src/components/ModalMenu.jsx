@@ -1,13 +1,16 @@
 import { useState, useEffect, useContext } from "react";
 import { Box } from "@mui/material";
 import { FaLinkedin, FaGithub, FaWhatsapp} from "react-icons/fa";
+
+import Checkbox from '@mui/material/Checkbox';
+import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
+import Favorite from '@mui/icons-material/Favorite'
 // import { UserContext } from "../context/UserContext.jsx";
 // import { modeLigth, modeDark } from "../helper/mode";
 // import { FaMoon } from "react-icons/fa";
 // import { FaSun } from "react-icons/fa";
 import { BsPinAngle } from "react-icons/bs";
 import { PiBrainThin } from "react-icons/pi";
-import { CiHeart } from "react-icons/ci";
 import { PiMapPinLine } from "react-icons/pi";
 import { MdClose } from "react-icons/md";
 import Google from "./Google";
@@ -18,108 +21,80 @@ import { UserContext } from "../context/UserContext";
 
 
 export const ModalMenu = ({ openModal, handleClose }) => {
+    // const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
     const [ count, setCount ] = useState(100);
     const [ heart, setHeart ] = useState(false);
     // const { ligthMode, setLigthMode } = useContext(UserContext);
-    const [isHover, setIsHover] = useState(false);
     const [isHoverLinks, setIsHoverLinks] = useState(false);
     const [openGoogle, setOpenGoogle] = useState(false);
-    const {send, setSend} = useContext(UserContext)
+    const {send, setSend} = useContext(UserContext);
+    const { like, setLike } = useContext(UserContext);
     
 
     const bgImg = {
         backgroundImage: `url(/img/gif1.gif)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-    }
+    };
+
     useEffect(() => {
         if (send) {
-          const timer = setTimeout(() => {
-            setSend(false);
-          }, 5000); 
-    
-          return () => clearTimeout(timer); 
-        }
-      }, [send]);
+            const timer = setTimeout(() => {
+                setSend(false);
+            }, 5000);
 
-    const handleClickLiked = () => {
-        if(heart !== true){
-            setCount(count + 1)
-            // setIsGifActive(true);
-            setOpenGoogle(true)
-            // const like = document.querySelector('.likeds .svgHeart');
-            // like.style.color = "rgb(93, 0, 180)";
-            setHeart(true)
-        } else {
-            setCount(count - 1)
-            // const like = document.querySelector('.likeds .svgHeart');
-            // ligthMode ? like.style.fill = "rgb(2, 10, 31)" : like.style.fill = "white";
-            setHeart(false);
-            // setIsGifActive(false);
-        };
-    }
+            return () => clearTimeout(timer);
+        }
+    }, [send]);
+
+    const handleLikeClick = () => {
+        setHeart(prevHeart => {
+            const newHeart = !prevHeart;
+            setLike(prevCount => newHeart ? prevCount + 1 : prevCount - 1);
+            setOpenGoogle(newHeart); // Solo abre Google si el "like" es positivo
+            return newHeart;
+        });
+    };
+
     const handleCloseGoogle = () => {
         setOpenGoogle(false);
-      }
-    
-    // const getLigthMode = () => {
-    //     setLigthMode(true)
-    //     modeLigth()
-    // }
-    // const getDarkMode = () => {
-    //     setLigthMode(false)
-    //     modeDark()
-    // }
-    const handleMouseEnter = () =>{
-        setIsHover(true);
-    }
-    const handleMouseLeave = () => {
-        setIsHover(false);
-    }
-    const handleMouseEnterLinks = () =>{
-        setIsHoverLinks(true);
-    }
-    const handleMouseLeaveLinks = () => {
-        setIsHoverLinks(false);
-    }
+    };
     return (
         <section className={`modalAboutme ${openModal ? 'show' : ''}`} onClick={handleClose}>
-            <Box sx={{...(send && bgImg)}} className="modalAboutme-content" onClick={(e) => e.stopPropagation()}>
-                    <Box sx={{display: 'flex', width:'100%', justifyContent: 'end'}}>
-                        <MdClose style={{cursor: 'pointer'}} size={30} onClick={handleClose} />
-                    </Box>
-                    <h1 className="ovo-regular">Neyeska Goidas </h1>
-                {/* {ligthMode ? <FaMoon onClick={getDarkMode} className='moon'/> : <FaSun onClick={getLigthMode} className='sun'/>} */}
+            <Box sx={{ ...(send && bgImg) }} className="modalAboutme-content" onClick={(e) => e.stopPropagation()}>
+                <Box sx={{ display: 'flex', width: '100%', justifyContent: 'end' }}>
+                    <MdClose style={{ cursor: 'pointer' }} size={30} onClick={handleClose} />
+                </Box>
+                <h1 className="ovo-regular">Neyeska Goidas</h1>
+
                 <div className="liked-img2">
-                    <img className='imgMe2' 
+                    <img className='imgMe2'
                         src='/img/i.jpg'
-                        alt="" 
-                        width='135px' 
-                        height='150px' 
-                        title='Neyeska Goidas' 
-                        style={{border: "10px solid white", marginBottom:'15px'}}
+                        alt=""
+                        width='135px'
+                        height='150px'
+                        title='Neyeska Goidas'
+                        style={{ border: "10px solid white", marginBottom: '15px' }}
                     />
                     <Box 
                         className="likeds2 ovo-regular"
-                        onMouseEnter={handleMouseEnter} 
-                        onMouseLeave={handleMouseLeave}
-                        onClick={handleClickLiked}
+                        onClick={handleLikeClick}
+                        sx={{ cursor: 'pointer' }}
                     >
-                        <CiHeart 
-                            className='svgHeart2'
-                            size={30} 
-                            style={{ color: isHover ?  '' : "white"}}
-                            color="#020A1F"
+                        <Checkbox
+                            icon={<FavoriteBorder sx={{ fontSize: 32, color: 'white' }} />}
+                            checkedIcon={<Favorite sx={{ fontSize: 32, color: 'red' }} />}
+                            checked={heart}
                         />
-
-                        <p className="ovo-regular" 
+                        <p className="ovo-regular"
                             style={{
-                                fontSize: '20px', 
-                                color: isHover ?  '#020A1F' : 'white',
+                                fontSize: '22px',
+                                color: 'white',
                                 margin: '0px'
                             }}
                         >
-                                {count} Like
+                            {like} Likes
                         </p>
                     </Box>
                     <Google openGoogle={openGoogle} handleCloseGoogle={handleCloseGoogle} />
