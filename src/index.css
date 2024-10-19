@@ -66,7 +66,6 @@ nav ul{
     position: absolute;
     right: 1vw;
     top: 5vh;
-    background-color: rgba(187, 187, 187, 0.915);
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -100,7 +99,7 @@ nav .collapse{
     justify-content: center;
     z-index: 1000;
     width: 100%;
-    height: 70%;
+    height: 80%;
     border-bottom: 2px solid white;
     border-top: 2px solid white;
     background-color: #020A1F;
@@ -230,6 +229,9 @@ nav .collapse{
     color: rgb(255, 255, 255) !important;
     font-weight: lighter !important;
 }
+.xlh1{
+    visibility: none;
+}
 @media (min-width: 767px) {
     #root{
         grid-template-areas: 
@@ -246,7 +248,7 @@ nav .collapse{
         display: flex;
         justify-content: end;
         left: 25vw;
-        z-index: 1000;
+        z-index: 1; 
     }
     nav .navBar{
         display: flex;
@@ -296,7 +298,7 @@ nav .collapse{
         padding: 1.5vw;
         z-index: 1;
     }
-    .sectionPrime h3{
+    .sectionPrime h1{
         display: flex;
         width: 100%;
         justify-content: center;
@@ -344,15 +346,43 @@ nav .collapse{
         border: 1px solid #020A1F;
         gap: 1vw;
     }
+    .likeds2 .checkHeart{
+        padding: 0;
+    }
     
     .likeds:hover{
         background-color: #020A1F;
+    
     }
     
     .sectionPrime h2:hover{
         color: red;
     
     } 
+    .modalGoogle.show{
+        display: flex;
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        align-items: center;
+        align-self: baseline;
+        top: 0;
+        left: 0;
+    } 
+    .modalGoogle-content{
+        position: relative;
+        background-color: #020A1F;
+        padding: 40px;
+        height: 90%;
+    }
+    .xlh1{
+        visibility: visible;
+    }
+    .colorLiked{
+        color: #020A1F;
+    }
 }
 @media (max-width: 767px){
     .card_projects{

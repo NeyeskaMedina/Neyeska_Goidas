@@ -1,63 +1,58 @@
-import { useState } from "react";
-import { Box } from "@mui/material";
+import { useState, useEffect, useContext } from "react";
 import { FaLinkedin, FaGithub, FaWhatsapp} from "react-icons/fa";
-// import { UserContext } from "../context/UserContext.jsx";
-// import { modeLigth, modeDark } from "../helper/mode";
-// import { FaMoon } from "react-icons/fa";
-// import { FaSun } from "react-icons/fa";
+import { Box } from "@mui/material";
 import { BsPinAngle } from "react-icons/bs";
 import { PiBrainThin } from "react-icons/pi";
-import { CiHeart } from "react-icons/ci";
 import { PiMapPinLine } from "react-icons/pi";
+// import { MdClose } from "react-icons/md";
+import Google from "./Google";
+import { UserContext } from "../context/UserContext.jsx";
+import Likes  from "./Likes";
 
 
 
 
 
 export const SectionAbout = () => {
-    const [ count, setCount ] = useState(100);
     const [ heart, setHeart ] = useState(false);
-    // const { ligthMode, setLigthMode } = useContext(UserContext);
-    const [isHover, setIsHover] = useState(false);
     const [isHoverLinks, setIsHoverLinks] = useState(false);
-    
+    const [openGoogle, setOpenGoogle] = useState(false);
+    const {send, setSend} = useContext(UserContext);
+    const { like, setLike } = useContext(UserContext);
 
-    const handleClickLiked = () => {
-        if(heart !== true){
-            setCount(count + 1)
-            // const like = document.querySelector('.likeds .svgHeart');
-            // like.style.color = "rgb(93, 0, 180)";
-            setHeart(true)
-        } else {
-            setCount(count - 1)
-            // const like = document.querySelector('.likeds .svgHeart');
-            // ligthMode ? like.style.fill = "rgb(2, 10, 31)" : like.style.fill = "white";
-            setHeart(false);
-        };
-    }
-    // const getLigthMode = () => {
-    //     setLigthMode(true)
-    //     modeLigth()
-    // }
-    // const getDarkMode = () => {
-    //     setLigthMode(false)
-    //     modeDark()
-    // }
-    const handleMouseEnter = () =>{
-        setIsHover(true);
-    }
-    const handleMouseLeave = () => {
-        setIsHover(false);
-    }
-    const handleMouseEnterLinks = () =>{
-        setIsHoverLinks(true);
-    }
-    const handleMouseLeaveLinks = () => {
-        setIsHoverLinks(false);
-    }
+    
+    const bgImg = {
+        backgroundImage: `url(/img/gif1.gif)`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+    };
+
+    useEffect(() => {
+        if (send) {
+            const timer = setTimeout(() => {
+                setSend(false);
+            }, 5000);
+
+            return () => clearTimeout(timer);
+        }
+    }, [send]);
+
+    const handleLikeClick = () => {
+        setHeart(prevHeart => {
+            const newHeart = !prevHeart;
+            setLike(prevCount => newHeart ? prevCount + 1 : prevCount - 1);
+            setOpenGoogle(newHeart); // Solo abre Google si el "like" es positivo
+            return newHeart;
+        });
+    };
+
+    const handleCloseGoogle = () => {
+        setOpenGoogle(false);
+    };
+    
     return (
-        <section className="sectionPrime">
-            <h3 className="ovo-regular">Neyeska Goidas </h3>
+        <section style={{ ...(send && bgImg) }} className="sectionPrime">
+            <h1 className="ovo-regular">Neyeska Goidas </h1>
             {/* {ligthMode ? <FaMoon onClick={getDarkMode} className='moon'/> : <FaSun onClick={getLigthMode} className='sun'/>} */}
             <div className="liked-img">
                 <img className='imgMe' 
@@ -68,34 +63,12 @@ export const SectionAbout = () => {
                     title='Neyeska Goidas' 
                     style={{border: "18px solid white"}}
                 />
-                <Box 
-                    className="likeds ovo-regular"
-                    onMouseEnter={handleMouseEnter} 
-                    onMouseLeave={handleMouseLeave}
-                    onClick={handleClickLiked}
-                    sx={{margin: '0px 0px 20px 0px' }}
-                >
-                    <CiHeart 
-                        className='svgHeart'
-                        size={30} 
-                        style={{ color: isHover ?  'white' : ""}}
-                        color="#020A1F"
-                    />
-
-                    <p className="ovo-regular" 
-                        style={{
-                            fontSize: '20px', 
-                            color: isHover ?  'white' : '#020A1F',
-                            margin: '0px'
-                        }}
-                    >
-                            {count} Like
-                    </p>
-                </Box>
+                <Likes heart={heart} handleLikeClick={handleLikeClick} like={like} />
+                <Google openGoogle={openGoogle} handleCloseGoogle={handleCloseGoogle} />
             </div>
-            <main className='descriptionPrime' style={{marginBottom: '20px', justifyContent: 'center'}}>
+            <main className='descriptionPrime' style={{marginBottom: '20px', justifyContent: 'center', marginTop: '2vh'}}>
                 <Box sx={{display: 'flex', width: '100%', justifyContent: 'center'}}>
-                    <h5 style={{margin: '0 5px 0 0'}}>Hi, tell me Neye </h5>
+                    <h4 style={{margin: '0 5px 0 0'}}>Hi, tell me Neye </h4>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" width={"25px"} height={"25px"}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
                     </svg>

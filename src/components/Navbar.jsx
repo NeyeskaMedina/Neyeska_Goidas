@@ -19,7 +19,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav>
+      <nav >
           <div className='navBar ovo-regular'>
           <FiMenu
               className='iconBurguer'

@@ -9,53 +9,35 @@ import { addLikeBack } from '../apiBack/postBackend.js';
 
 export const Google = ({ openGoogle, handleCloseGoogle }) => {
     const [email, setEmail] = useState('');
-    const [emailError, setEmailError] = useState(false); // Estado para gestionar si hay un error
+    const [emailError, setEmailError] = useState(false); 
     const [nameError, setNameError] = useState(false);
-    const [helperText, setHelperText] = useState(''); // Mensaje de ayuda
-    const [isButtonDisabled, setIsButtonDisabled] = useState(true); // Estado para deshabilitar botón
+    const [helperText, setHelperText] = useState(''); 
     const {send, setSend} = useContext(UserContext);
     const [name, setName] = useState("");
     const [check, setCheck] = useState(false);
     
-    // Función de validación de correo
+
     const validateEmail = (email) => {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return regex.test(email); // Devuelve true si el correo es válido
+        return regex.test(email); 
     };
     const validateName = (name) => {
         const regex = /^[a-zA-Z\s]+$/;
-        return regex.test(name); // Devuelve true si el nombre es válido
+        const res = regex.test(name) && name.length > 4;
+        return res;
     }
 
-    // Manejar el cambio en el input
+
     const handleEmailChange = (e) => {
         const emailValue = e.target.value;
         setEmail(emailValue);
-
-        if (validateEmail(emailValue)) {
-            setEmailError(false);
-            setHelperText(''); // Limpiar mensaje de error si es válido
-            setIsButtonDisabled(false); // Habilitar botón si el correo es válido
-        } else {
-            setEmailError(true);
-            setHelperText('Correo electrónico no válido'); // Mostrar mensaje de error
-            setIsButtonDisabled(true); // Deshabilitar botón si el correo es inválido
-        }
+        setEmailError(!validateEmail(emailValue.trim())); 
     };
     const handleNameChange = (e) => {
         const nameValue = e.target.value;
-        setName(nameValue);
-
-        if (validateName(nameValue)  && nameValue.length > 4 ) {
-            setIsButtonDisabled(false); // Habilitar botón si el nombre es válido
-            setNameError(false);
-            setHelperText('');
-        } else {
-            setIsButtonDisabled(true); // Deshabilitar botón si el nombre es inválido
-            setHelperText('Introduzca un nombre valido');
-            setNameError(true);
-        }
-    }
+        setName(nameValue);      
+        setNameError(!validateName(nameValue.trim())); 
+    };
     const handleClickOutside = (e) => {
         if (e.target.classList.contains('modalGoogle')) {
             handleCloseGoogle();
@@ -65,7 +47,7 @@ export const Google = ({ openGoogle, handleCloseGoogle }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!validateEmail(email) && !validateName(name)) {
+        if (!validateEmail(email.trim()) && !validateName(name.trim())) {
             setEmailError(true);
             setHelperText('Correo electrónico no válido');
         } else {
@@ -98,10 +80,12 @@ export const Google = ({ openGoogle, handleCloseGoogle }) => {
              }
         }
     };
+    const isButtonDisabled = emailError || nameError || email === "" || name === "";
 
     return (
         <Box onClick={handleClickOutside} className={`modalGoogle ${openGoogle ? 'show' : ''}`}>
             <Box className="modalGoogle-content">
+            <h1 className='xlh1'>¡Enviame tu like!</h1>
                 <Box sx={{ marginBottom: '2vh' }} className="modalGoogle-headers">
                     <FcGoogle size={100} />
                 </Box>
@@ -182,7 +166,8 @@ export const Google = ({ openGoogle, handleCloseGoogle }) => {
                         sx={{ 
                             color: helperText !== "" ? 'red' : 'transparent', // Rojo si hay error
                             fontSize: '1rem', 
-                            marginTop: '0.5rem' 
+                            marginTop: '0.5rem',
+                            marginBottom: '25px'
                         }}
                     >
                         {helperText}
@@ -191,7 +176,7 @@ export const Google = ({ openGoogle, handleCloseGoogle }) => {
                         <FormGroup>
                             <FormControlLabel 
                                 onChange={(e) => setCheck(e.target.checked)}
-                                control={<Checkbox />} 
+                                control={<Checkbox sx={{color: 'ActiveBorder'}} />} 
                                 label="Selecciona si deseas que te envie mis projectos actualizados y promociones en el desarrollo web." />
                         </FormGroup>
                 
@@ -201,7 +186,7 @@ export const Google = ({ openGoogle, handleCloseGoogle }) => {
                     <Button
                         onClick={handleSubmit}
                         variant="outlined"
-                        disabled={isButtonDisabled} // Botón deshabilitado si el correo es inválido
+                        disabled={isButtonDisabled ? true : false} // Botón deshabilitado si el correo es inválido
                         sx={{
                             borderRadius: '20px',
                             padding: '5px',

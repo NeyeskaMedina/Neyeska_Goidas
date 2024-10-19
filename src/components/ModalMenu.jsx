@@ -1,10 +1,8 @@
 import { useState, useEffect, useContext } from "react";
-import { Box } from "@mui/material";
 import { FaLinkedin, FaGithub, FaWhatsapp} from "react-icons/fa";
+import { Box } from "@mui/material";
 
-import Checkbox from '@mui/material/Checkbox';
-import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
-import Favorite from '@mui/icons-material/Favorite'
+
 // import { UserContext } from "../context/UserContext.jsx";
 // import { modeLigth, modeDark } from "../helper/mode";
 // import { FaMoon } from "react-icons/fa";
@@ -15,17 +13,14 @@ import { PiMapPinLine } from "react-icons/pi";
 import { MdClose } from "react-icons/md";
 import Google from "./Google";
 import { UserContext } from "../context/UserContext";
+import Likes  from "../components/Likes.jsx";
 
 
 
 
 
 export const ModalMenu = ({ openModal, handleClose }) => {
-    // const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-
-    const [ count, setCount ] = useState(100);
     const [ heart, setHeart ] = useState(false);
-    // const { ligthMode, setLigthMode } = useContext(UserContext);
     const [isHoverLinks, setIsHoverLinks] = useState(false);
     const [openGoogle, setOpenGoogle] = useState(false);
     const {send, setSend} = useContext(UserContext);
@@ -77,26 +72,7 @@ export const ModalMenu = ({ openModal, handleClose }) => {
                         title='Neyeska Goidas'
                         style={{ border: "10px solid white", marginBottom: '15px' }}
                     />
-                    <Box 
-                        className="likeds2 ovo-regular"
-                        onClick={handleLikeClick}
-                        sx={{ cursor: 'pointer' }}
-                    >
-                        <Checkbox
-                            icon={<FavoriteBorder sx={{ fontSize: 32, color: 'white' }} />}
-                            checkedIcon={<Favorite sx={{ fontSize: 32, color: 'red' }} />}
-                            checked={heart}
-                        />
-                        <p className="ovo-regular"
-                            style={{
-                                fontSize: '22px',
-                                color: 'white',
-                                margin: '0px'
-                            }}
-                        >
-                            {like} Likes
-                        </p>
-                    </Box>
+                    <Likes heart={heart} handleLikeClick={handleLikeClick} like={like} />
                     <Google openGoogle={openGoogle} handleCloseGoogle={handleCloseGoogle} />
                 </div>
                 
