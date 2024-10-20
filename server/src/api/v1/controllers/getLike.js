@@ -5,7 +5,6 @@ import {
 const getLike = async (req, res) => {
     try {
         const cantLike = await getLikeDB();
-        console.log(cantLike)
         return res.status(200).json({ cantLike : cantLike });
     } catch (error) {
         const errorFound = [

@@ -25,7 +25,6 @@ body.addEventListener('touchend',  (event) =>{
 
             //desplazo hacia la derecha
             const path = getPath
-            console.log(path);
            
         } else {
             //desplazo hacia la izquierda
