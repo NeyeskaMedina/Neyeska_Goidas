@@ -9,7 +9,6 @@ const addLikeBack = async ({date}) =>{
                 'Content-Type': 'application/json',
             }
         });
-        console.log(response.data.message);
         
         return { response: response.data, error: null, loading: true }
     } catch (err) {

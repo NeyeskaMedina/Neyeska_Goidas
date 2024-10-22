@@ -54,7 +54,7 @@ export const Google = ({ openGoogle, handleCloseGoogle, openModal }) => {
 
         if (!validateEmail(email.trim()) && !validateName(name.trim())) {
             setEmailError(true);
-            setHelperText('Correo electrónico no válido');
+            setHelperText('Invalid email');
         } else {
             setEmailError(false);
             setHelperText('');
@@ -63,20 +63,18 @@ export const Google = ({ openGoogle, handleCloseGoogle, openModal }) => {
                 email,
                 check
             }
-            console.log(date);
             
             console.log('Correo válido:', email);
              // Aquí puedes agregar la lógica adicional al hacer submit
              try {
                 const response = await addLikeBack({date})
-                console.log(response.loading);
                 
                 if(response.loading === true){
                     handleCloseGoogle();
                     setSend(true);
                     localStorage.setItem("token", response.token, response.useAut);
                 }else{
-                    setHelperText('Usuario ya nos envio like')
+                    setHelperText('User already sent us like')
                     setSend(false)
                 }
              } catch (error) {
@@ -90,7 +88,7 @@ export const Google = ({ openGoogle, handleCloseGoogle, openModal }) => {
     return (
         <Box onClick={handleClickOutside} className={`modalGoogle ${openGoogle ? 'show' : ''}`}>
             <Box className="modalGoogle-content">
-            <h1 className='xlh1'>¡Enviame tu like!</h1>
+            <h1 className='xlh1'>¡Send your like!</h1>
                 <Box sx={{ marginBottom: '2vh' }} className="modalGoogle-headers">
                     <FcGoogle size={100} />
                 </Box>
@@ -98,7 +96,7 @@ export const Google = ({ openGoogle, handleCloseGoogle, openModal }) => {
                     {/* Campo de correo electrónico */}
                     <TextField
                         id="outlined-basic"
-                        label="Correo electrónico"
+                        label="Email"
                         variant="outlined"
                         value={email}
                         onChange={handleEmailChange} // Maneja el cambio de email
@@ -132,7 +130,7 @@ export const Google = ({ openGoogle, handleCloseGoogle, openModal }) => {
                     />
                     <TextField
                         id="outlined-basic"
-                        label="Nombre Completo"
+                        label="Full name"
                         variant="outlined"
                         error={nameError}
                         value={name}
@@ -182,7 +180,7 @@ export const Google = ({ openGoogle, handleCloseGoogle, openModal }) => {
                             <FormControlLabel 
                                 onChange={(e) => setCheck(e.target.checked)}
                                 control={<Checkbox sx={{color: 'ActiveBorder'}} />} 
-                                label="Selecciona si deseas que te envie mis projectos actualizados y promociones en el desarrollo web." />
+                                label="Select if you want me to send you my updated projects and promotions in web development." />
                         </FormGroup>
                 
 
@@ -210,7 +208,7 @@ export const Google = ({ openGoogle, handleCloseGoogle, openModal }) => {
                             },
                         }}
                     >
-                        Enviar
+                        Send
                     </Button>
                 </form>
             </Box>
